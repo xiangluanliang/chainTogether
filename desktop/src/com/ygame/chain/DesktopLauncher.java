@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
 		config.setTitle("Chain-Together");
-		config.setWindowedMode(1024,576);
+		config.setWindowedMode(1920,1080);
 		new Lwjgl3Application(new ChainTogether(), config);
 	}
 }
