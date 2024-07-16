@@ -60,37 +60,6 @@ public class ChainTogether extends Game {
         PolygonShape groundBox = new PolygonShape();// 物体的形状，这样创建是矩形的
         groundBox.setAsBox(Gdx.graphics.getWidth(), 2);// 物体的宽高
         groundBody.createFixture(groundBox, 0); // 静态物体的质量应该设为0
-//
-//        //创建墙壁
-//        BodyDef wallBodyDef = new BodyDef();
-//        wallBodyDef.type = BodyDef.BodyType.StaticBody;
-//        wallBodyDef.position.x = 30;
-//        wallBodyDef.position.y = 0;
-//        Body wallBody = world.createBody(wallBodyDef);
-//        PolygonShape wallBox = new PolygonShape();
-//        wallBox.setAsBox(1, Gdx.graphics.getHeight());
-//        wallBody.createFixture(wallBox,0);
-//
-//        BodyDef wallBodyDef1 = new BodyDef();
-//        wallBodyDef1.type = BodyDef.BodyType.StaticBody;
-//        wallBodyDef1.position.x = -10;
-//        wallBodyDef1.position.y = 0;
-//        Body wallBody1 = world.createBody(wallBodyDef1);
-//        PolygonShape wallBox1 = new PolygonShape();
-//        wallBox1.setAsBox(1, Gdx.graphics.getHeight());
-//        wallBody1.createFixture(wallBox1,0);
-//
-//
-//
-//        // 创建一个静态物体，我们当他是障碍物即可
-//        BodyDef badlogicBodyDef = new BodyDef();
-//        badlogicBodyDef.type = BodyDef.BodyType.StaticBody;
-//        badlogicBodyDef.position.x = 10;
-//        badlogicBodyDef.position.y = 10 + 256f/200; // + 1.28是因为图片由中心绘制的 也可以写成 + 256/2/100
-//        Body badlogicBody = world.createBody(badlogicBodyDef);
-//        PolygonShape badlogicBox = new PolygonShape();
-//        badlogicBox.setAsBox(256f / 2 / reduce, 256f / 2 / reduce);// 图形绘制是由中心绘制的，所以要除一半
-//        badlogicBody.createFixture(badlogicBox, 0); // 静态物体的质量应该设为0
 
         mapGenerator.createTerrainFromTiled("terrainObj");
         mapGenerator.createTerrainFromTiled("plats");
