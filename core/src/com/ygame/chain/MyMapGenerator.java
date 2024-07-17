@@ -29,18 +29,19 @@ import static com.ygame.chain.ConstPool.PPM;
  */
 public class MyMapGenerator {
     World world;
-    private TiledMap map;
-    private OrthogonalTiledMapRenderer mapRenderer;
+    private final TiledMap map;
+    private final OrthogonalTiledMapRenderer mapRenderer;
 
-    public MyMapGenerator(String path,World world) {
+    public MyMapGenerator(String path, World world) {
         this.world = world;
         map = new TmxMapLoader().load(path);
-        mapRenderer = new OrthogonalTiledMapRenderer(map,1/PPM);
+        mapRenderer = new OrthogonalTiledMapRenderer(map, 1 / PPM);
     }
 
-    public OrthogonalTiledMapRenderer getMapRenderer(){
+    public OrthogonalTiledMapRenderer getMapRenderer() {
         return mapRenderer;
     }
+
     public void createTerrainFromTiled(String layerName) {
         MapLayer terrainLayer = map.getLayers().get(layerName);
         MapObjects objects = null;

@@ -1,9 +1,5 @@
 {
-    "Map/SizeTest": {
-        "height": 4300,
-        "width": 2
-    },
-    "activeFile": "level-1.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
         "."
     ],
@@ -11,16 +7,35 @@
         "": {
             "scaleInDock": 1
         },
+        "D:/Code/HomeWork/javagame_24spring/chain_together/assets/chain_together_map/crates.tsx": {
+            "scaleInDock": 1
+        },
         "crates.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "level-1-1.tmx": {
+            "scale": 0.6377864583333334,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 959.5688211996244,
+                "y": 560.5324404883427
+            }
+        },
+        "level-1.1.tmx": {
+            "scale": 0.7530729166666666,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 804.7029531779515,
+                "y": 559.7067570371396
+            }
+        },
         "level-1.tmx": {
             "scale": 2,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 239.5,
+                "x": 239,
                 "y": 317.25
             }
         },
@@ -37,26 +52,13 @@
             "scaleInDock": 1
         }
     },
-    "last.imagePath": "D:/Code/HomeWork/javagame_24spring/resourse/ninja-adventure",
-    "map.height": 18,
-    "map.lastUsedFormat": "tmx",
-    "map.orientation": "1",
-    "map.width": 32,
     "openFiles": [
-        "level-1.tmx",
-        "crates.tsx"
     ],
     "project": "chain_together_map.tiled-project",
-    "property.type": "int",
     "recentFiles": [
-        "crates.tsx",
-        "level-1.tmx"
-    ],
-    "tileset.embedInMap": true,
-    "tileset.lastUsedFormat": "tsx",
-    "tileset.tileSize": {
-        "height": 32,
-        "width": 32
-    },
-    "tileset.useTransparentColor": true
+        "level-1-1.tmx",
+        "level-1.tmx",
+        "level-1.1.tmx",
+        "crates.tsx"
+    ]
 }
