@@ -1,4 +1,4 @@
-package com.ygame.chain;
+package com.ygame.chain.utils;
 
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
@@ -15,7 +15,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
 
-import static com.ygame.chain.ConstPool.PPM;
+import static com.ygame.chain.utils.ConstPool.PPM;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -27,12 +27,12 @@ import static com.ygame.chain.ConstPool.PPM;
  * @Create 2024/7/16 15:19
  * @Version 1.0
  */
-public class MyMapGenerator {
+public class GameMapGenerator {
     World world;
     private final TiledMap map;
     private final OrthogonalTiledMapRenderer mapRenderer;
 
-    public MyMapGenerator(String path, World world) {
+    public GameMapGenerator(String path, World world) {
         this.world = world;
         map = new TmxMapLoader().load(path);
         mapRenderer = new OrthogonalTiledMapRenderer(map, 1 / PPM);
