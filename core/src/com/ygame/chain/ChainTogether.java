@@ -24,7 +24,7 @@ public class ChainTogether extends Game {
 
     private World world;
     private Box2DDebugRenderer debugRenderer;
-    private boolean isJump;
+
 
     MyMapGenerator mapGenerator;
 
@@ -82,13 +82,13 @@ public class ChainTogether extends Game {
         Vector2 position = redBall.getPosition();
 
         // 将相机与批处理精灵绑定
-        if ((position.x > 0 && position.x < 15) && position.y < 20) {
+        if ((position.x > 0 && position.x < 15) && position.y < 30) {
             smoothCamera.setTargetPosition(position.x, position.y * 0.8f + 2);
         }
         smoothCamera.update(Gdx.graphics.getDeltaTime());
 
 
-        // 将绘制与相机投影绑定 关键 关键
+        // 将绘制与相机投影绑定
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         redBall.render(batch);
@@ -96,30 +96,22 @@ public class ChainTogether extends Game {
         purpleBall.render(batch);
         batch.end();
 
-        // 获取五星的线速度
-        Vector2 linearVelocity = redBall.getBody().getLinearVelocity();
-        if (Gdx.input.isKeyPressed(Input.Keys.D) && linearVelocity.x <= 2) { // 现在最大速度为 2，不然会放飞自我
-            // 施加冲动 让物体运行起来，可以看成我们推一下物体就往一边移动了
-            redBall.getBody().applyLinearImpulse(new Vector2(0.1f, 0), redBall.getBody().getWorldCenter(), true);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.A) && linearVelocity.x >= -2) {
-            redBall.getBody().applyLinearImpulse(new Vector2(-0.1f, 0), redBall.getBody().getWorldCenter(), true);
-        }
+        handleInput();
 
-        // 跳起来的逻辑，比较简单。但是时候这个演示
-        if (!isJump && Gdx.input.isKeyPressed(Input.Keys.W) && linearVelocity.y <= 3) {
-            redBall.getBody().applyLinearImpulse(new Vector2(0, 3), redBall.getBody().getWorldCenter(), true);
-            isJump = true;
-        }
-        if (linearVelocity.y == 0) {
-            isJump = false;
-        }
-
-        // 给Box2D世界里的物体绘制轮廓，让我们看得更清楚，正式游戏需要注释掉这个渲染
+        // 给Box2D世界里的物体绘制轮廓，正式游戏需要注释掉这个渲染
         debugRenderer.render(world, camera.combined);
 
         // 更新世界里的关系 这个要放在绘制之后，最好放最后面
         world.step(1 / 60f, 6, 2);
+    }
+
+    private void handleInput() {
+        if (Gdx.input.isKeyPressed(Input.Keys.D))
+            redBall.move(0.1f, 0);
+        if (Gdx.input.isKeyPressed(Input.Keys.A))
+            redBall.move(-0.1f, 0);
+        if (Gdx.input.isKeyPressed(Input.Keys.W))
+            redBall.jump(0, 3);
     }
 
     @Override

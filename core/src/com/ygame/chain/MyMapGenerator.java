@@ -131,8 +131,6 @@ public class MyMapGenerator {
     }
 
     private void createEllipseShape(EllipseMapObject ellipseObject) {
-        // Ellipse 不能直接用 Box2D 形状表示，可以近似为圆形或多个小多边形组合。
-        // 以下是一个近似为圆形的示例。
         float x = (ellipseObject.getEllipse().x + ellipseObject.getEllipse().width / 2) / PPM;
         float y = (ellipseObject.getEllipse().y + ellipseObject.getEllipse().height / 2) / PPM;
         float radius = ellipseObject.getEllipse().width / 2 / PPM;

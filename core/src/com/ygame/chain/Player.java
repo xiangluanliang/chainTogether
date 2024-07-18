@@ -1,6 +1,7 @@
 package com.ygame.chain;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -36,18 +37,8 @@ public class Player {
 
 
     private Sprite sprite;
-    private Rectangle boundingBox;
-    float moveSpeed;
-    private float velocityX = 0;
-    boolean isMoving = false;
-    private final static float FRICTION = -199;
-    private final static float GRAVITY = -980;
-    float jumpSpeed;
-    private float velocityY = 0;
-    boolean isJumping = false;
-    int leftRightFlag;
-    private int deadCount = 0;
-    private float[] flagPosition = new float[2];
+    private boolean isJump;
+
 
     public Player(String path, World world, float bornPositionX, float bornPositionY) {
         Texture img = new Texture(path);
@@ -62,7 +53,7 @@ public class Player {
         roleBody = world.createBody(roleBodyDef);
         CircleShape dynamicBox = new CircleShape();
         dynamicBox.setRadius(Width / 2f / PPM);
-//
+
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = dynamicBox;
         fixtureDef.density = 1.0f;// 密度
@@ -73,11 +64,9 @@ public class Player {
         dynamicBox.dispose();
     }
 
-
     public TextureRegion getRole() {
         return role;
     }
-
 
     public Body getBody() {
         return roleBody;
@@ -95,150 +84,20 @@ public class Player {
         return Width;
     }
 
-    public Player(float x, float y, float scale, String path) {
-        Texture role = new Texture(Gdx.files.internal(path));
-        moveSpeed = 200;
-        jumpSpeed = 500;
-        sprite = new Sprite(role);
-        sprite.setSize(role.getWidth() * scale, role.getHeight() * scale);
-        sprite.setPosition(x, y);
-        setFlag(x, y);
-        boundingBox = new Rectangle(x, y, (role.getWidth() - 200) * scale, (role.getHeight() - 200) * scale);
-    }
-
-    public void updateBox(Body body, float PPM) {
-        sprite.setPosition(
-                body.getPosition().x * PPM - sprite.getWidth() / 2,
-                body.getPosition().y * PPM - sprite.getHeight() / 2
-        );
-        sprite.setRotation((float) Math.toDegrees(body.getAngle()));
-    }
-
-    private void setFlag(float[] flag) {
-        flagPosition[0] = flag[0];
-        flagPosition[1] = flag[1];
-    }
-
-    private void setFlag(float x, float y) {
-        flagPosition[0] = x;
-        flagPosition[1] = y;
-    }
-
-    public void move(int flag) {
-        leftRightFlag = flag;
-        velocityX = flag * moveSpeed;
-        isMoving = true;
-    }
-
-    public void moveUpdate(float deltaTime, Array<Rectangle> collidableRects) {
-        if (isMoving) {
-            velocityX += leftRightFlag * FRICTION * deltaTime;
-            boundingBox.setPosition(sprite.getX() + velocityX * deltaTime, sprite.getY());
-
-            for (Rectangle rect : collidableRects) {
-                if (boundingBox.overlaps(rect)) {
-                    isMoving = false;
-                    return;
-                }
-            }
-            sprite.translateX(velocityX * deltaTime);
-
-            if (velocityX * leftRightFlag <= 180) {
-                velocityX = 0;
-                isMoving = false;
-            }
+    public void move(float x, float y) {
+        if (roleBody.getLinearVelocity().x <= 2) {
+            roleBody.applyLinearImpulse(new Vector2(x, y), roleBody.getWorldCenter(), true);
         }
     }
 
-    public void platUpdate(Array<MapObject> plats) {
-        for (MapObject plat : plats) {
-            if ((boolean) plat.getProperties().get("isTouched")) {
-                plat.setVisible(false);
-            }
-
+    public void jump(float x, float y) {
+        if (roleBody.getLinearVelocity().y == 0) {
+            isJump = false;
         }
-
-    }
-
-    public void jump() {
-        if (!isJumping) {
-            velocityY = jumpSpeed;
-            isJumping = true;
+        if (!isJump && roleBody.getLinearVelocity().y <= 3) {
+            roleBody.applyLinearImpulse(new Vector2(x, y), roleBody.getWorldCenter(), true);
+            isJump = true;
         }
-    }
-
-    public void jumpUpdate(float deltaTime, Array<Rectangle> collidableRects) {
-        if (isJumping) {
-            velocityY += GRAVITY * deltaTime;
-            boundingBox.setPosition(sprite.getX(), sprite.getY() + velocityY * deltaTime);
-
-            for (Rectangle rect : collidableRects) {
-                if (boundingBox.overlaps(rect)) {
-
-                    if (velocityY < 0 && sprite.getY() > rect.getY() + rect.getHeight()) {
-                        isJumping = false;
-                        velocityY = 0;
-                        sprite.setY(rect.getY() + rect.getHeight());
-
-                    } else if (velocityY > 0 && sprite.getY() < rect.getY()) {
-                        velocityY = 0;
-                        sprite.setY(rect.getY() - sprite.getHeight());
-                    }
-                    return;
-                }
-            }
-
-            sprite.translateY(velocityY * deltaTime);
-
-//            if (sprite.getY() <= 0) {
-//                sprite.setY(0);
-//                velocityY = 0;
-//                isJumping = false;
-//            }
-        }
-    }
-
-    public void applyGravity(float deltaTime, Array<Rectangle> collidableRects) {
-        if (!isJumping) {
-            velocityY += GRAVITY * deltaTime;
-            boundingBox.setPosition(sprite.getX(), sprite.getY() + velocityY * deltaTime);
-
-            for (Rectangle rect : collidableRects) {
-                if (boundingBox.overlaps(rect)) {
-                    if (sprite.getY() > rect.getY() + rect.getHeight()) {
-                        velocityY = 0;
-                        sprite.setY(rect.getY() + rect.getHeight());
-                    }
-                    return;
-                }
-            }
-
-            sprite.translateY(velocityY * deltaTime);
-
-//            if (sprite.getY() <= 0) {
-//                sprite.setY(0);
-//                velocityY = 0;
-//            }
-        }
-    }
-
-    public void deadUpdate() {
-        if (sprite.getY() <= 0) {
-            sprite.setPosition(flagPosition[0], flagPosition[1]);
-            boundingBox.setPosition(flagPosition[0], flagPosition[1]);
-            deadCount++;
-            velocityY = 0;
-            velocityX = 0;
-            isJumping = false;
-            isMoving = false;
-        }
-    }
-
-    //    public void platUpdate(float deltaTime, Array<Rectangle> plats){
-//
-//    }
-    public int getDeadCount() {
-        return deadCount;
     }
 
     public void render(SpriteBatch batch) {
@@ -247,20 +106,11 @@ public class Player {
         // 这方法无敌了吧？发现了能不用也是神人了？你们有这样的方法吗
         // 所以到底是怎么做到的？是因为缩放带来的误差吗？兄弟没道理的
         // 它这个明显是在最开始就设定好中心，感觉像是给Texture坐标问题打的一个补丁？
-        sprite.setOriginBasedPosition(roleBody.getPosition().x,roleBody.getPosition().y);
+        sprite.setOriginBasedPosition(roleBody.getPosition().x, roleBody.getPosition().y);
 
-        sprite.setRotation(roleBody.getAngle()*MathUtils.radiansToDegrees);
-        sprite.setScale(1/PPM);
+        sprite.setRotation(roleBody.getAngle() * MathUtils.radiansToDegrees);
+        sprite.setScale(1 / PPM);
         sprite.draw(batch);
-
-//        batch.draw(role,
-//                roleBody.getPosition().x-Width/2f/PPM,
-//                roleBody.getPosition().y-Height/2f/PPM,
-//                0, 0,
-//                Width, Height,
-//                1 / PPM, 1 / PPM,
-//                roleBody.getAngle() * MathUtils.radiansToDegrees// 旋转
-//        );
     }
 }
 
