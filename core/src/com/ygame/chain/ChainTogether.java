@@ -4,10 +4,11 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
-import com.ygame.chain.utils.MyMapGenerator;
+import com.ygame.chain.utils.GameMapGenerator;
 import com.ygame.chain.utils.Player;
 import com.ygame.chain.utils.SmoothCamera;
 
@@ -22,7 +23,7 @@ public class ChainTogether extends Game {
     private World world;
     private Box2DDebugRenderer debugRenderer;
 
-    MyMapGenerator mapGenerator;
+    GameMapGenerator mapGenerator;
 
 
     @Override
@@ -56,7 +57,7 @@ public class ChainTogether extends Game {
         groundBody.createFixture(groundBox, 0);
 
         // 加载所有碰撞箱
-        mapGenerator = new MyMapGenerator("./chain_together_map/level-1.tmx", world);
+        mapGenerator = new GameMapGenerator("./chain_together_map/level-1.tmx", world);
         mapGenerator.createTerrainFromTiled("terrainObj");
 
         // 创建角色

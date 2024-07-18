@@ -27,12 +27,12 @@ import static com.ygame.chain.utils.ConstPool.PPM;
  * @Create 2024/7/16 15:19
  * @Version 1.0
  */
-public class MyMapGenerator {
+public class GameMapGenerator {
     World world;
     private final TiledMap map;
     private final OrthogonalTiledMapRenderer mapRenderer;
 
-    public MyMapGenerator(String path, World world) {
+    public GameMapGenerator(String path, World world) {
         this.world = world;
         map = new TmxMapLoader().load(path);
         mapRenderer = new OrthogonalTiledMapRenderer(map, 1 / PPM);
