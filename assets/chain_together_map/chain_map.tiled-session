@@ -1,0 +1,51 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "level-1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "0-tileset-32x32.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "0-tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "level-1.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 142.66666666666669,
+                "y": 715.6666666666666
+            }
+        },
+        "tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "D:/Code/HomeWork/javagame_24spring/chain_together_Yhr/assets/resourse/medieval-fantasy",
+    "map.height": 35,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 60,
+    "openFiles": [
+        "level-1.tmx",
+        "0-tileset-32x32.tsx",
+        "tileset.tsx",
+        "0-tileset.tsx"
+    ],
+    "project": "chain_map.tiled-project",
+    "recentFiles": [
+        "0-tileset.tsx",
+        "tileset.tsx",
+        "0-tileset-32x32.tsx",
+        "level-1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
