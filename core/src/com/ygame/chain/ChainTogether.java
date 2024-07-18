@@ -114,6 +114,7 @@ public class ChainTogether extends Game {
             redBall.jump(0, 3);
     }
 
+
     @Override
     public void dispose() {
         batch.dispose();
