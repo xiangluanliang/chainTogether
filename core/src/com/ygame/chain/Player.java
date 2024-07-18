@@ -242,14 +242,25 @@ public class Player {
     }
 
     public void render(SpriteBatch batch) {
-        batch.draw(role,
-                roleBody.getPosition().x,
-                roleBody.getPosition().y,
-                0, 0,
-                Width, Height,
-                1 / PPM, 1 / PPM,
-                roleBody.getAngle() * MathUtils.radiansToDegrees// 旋转
-        );
+        sprite = new Sprite(role);
+
+        // 这方法无敌了吧？发现了能不用也是神人了？你们有这样的方法吗
+        // 所以到底是怎么做到的？是因为缩放带来的误差吗？兄弟没道理的
+        // 它这个明显是在最开始就设定好中心，感觉像是给Texture坐标问题打的一个补丁？
+        sprite.setOriginBasedPosition(roleBody.getPosition().x,roleBody.getPosition().y);
+
+        sprite.setRotation(roleBody.getAngle()*MathUtils.radiansToDegrees);
+        sprite.setScale(1/PPM);
+        sprite.draw(batch);
+
+//        batch.draw(role,
+//                roleBody.getPosition().x-Width/2f/PPM,
+//                roleBody.getPosition().y-Height/2f/PPM,
+//                0, 0,
+//                Width, Height,
+//                1 / PPM, 1 / PPM,
+//                roleBody.getAngle() * MathUtils.radiansToDegrees// 旋转
+//        );
     }
 }
 
