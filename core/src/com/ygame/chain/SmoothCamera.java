@@ -1,7 +1,10 @@
 package com.ygame.chain;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
+import jdk.internal.math.FloatingDecimal;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -13,25 +16,24 @@ import com.badlogic.gdx.math.Vector2;
  * @Create 2024/7/16 14:23
  * @Version 1.0
  */
-public class SmoothCamera {
-    private OrthographicCamera camera;
+public class SmoothCamera extends OrthographicCamera {
     private Vector2 targetPosition;
     private float smoothing;
 
-    public SmoothCamera(OrthographicCamera camera, float smoothing) {
-        this.camera = camera;
-        this.targetPosition = new Vector2(camera.position.x, camera.position.y);
+    public SmoothCamera(float smoothing) {
+        this.targetPosition = new Vector2(position.x, position.y);
         this.smoothing = smoothing;
     }
 
-    public void update(float deltaTime) {
-        // 插值计算新的相机位置
-        camera.position.x += (targetPosition.x - camera.position.x) * smoothing * deltaTime;
-        camera.position.y += (targetPosition.y - camera.position.y) * smoothing * deltaTime;
-        camera.update();
+    public void update(Player player) {
+        Vector2 playerPosition = player.getPosition();
+        // 将相机与批处理精灵绑定
+        if ((playerPosition.x > 0 && playerPosition.x < 15) && playerPosition.y < 30) {
+            targetPosition.set(playerPosition.x, playerPosition.y * 0.8f + 2);
+        }
+        position.x += (targetPosition.x - position.x) * smoothing * Gdx.graphics.getDeltaTime();
+        position.y += (targetPosition.y - position.y) * smoothing * Gdx.graphics.getDeltaTime();
+        update();
     }
 
-    public void setTargetPosition(float x, float y) {
-        targetPosition.set(x, y);
-    }
 }

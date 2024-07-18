@@ -5,13 +5,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
-
-import static com.ygame.chain.ConstPool.PPM;
 
 
 public class ChainTogether extends Game {
@@ -19,12 +15,10 @@ public class ChainTogether extends Game {
     private Player redBall;
     private Player greenBall;
     private Player purpleBall;
-    private OrthographicCamera camera;
     private SmoothCamera smoothCamera;
 
     private World world;
     private Box2DDebugRenderer debugRenderer;
-
 
     MyMapGenerator mapGenerator;
 
@@ -36,11 +30,11 @@ public class ChainTogether extends Game {
 
         // 创建相机
         float forceLength = 128f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
-        camera = new OrthographicCamera();
-        camera.setToOrtho(false,
+
+        smoothCamera = new SmoothCamera(0.9f);
+        smoothCamera.setToOrtho(false,
                 Gdx.graphics.getWidth() / forceLength,
                 Gdx.graphics.getHeight() / forceLength);
-        smoothCamera = new SmoothCamera(camera, 0.9f);
 
         // 载入地图（我是不是有选择困难证？先加载地图还是先加载人物都要想半天。。没差啦，按照自然顺序先加载地图吧
 
@@ -75,21 +69,13 @@ public class ChainTogether extends Game {
     public void render() {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        mapGenerator.getMapRenderer().setView(camera);
+        mapGenerator.getMapRenderer().setView(smoothCamera);
         mapGenerator.getMapRenderer().render();
 
-        // 获取 物体的位置
-        Vector2 position = redBall.getPosition();
-
-        // 将相机与批处理精灵绑定
-        if ((position.x > 0 && position.x < 15) && position.y < 30) {
-            smoothCamera.setTargetPosition(position.x, position.y * 0.8f + 2);
-        }
-        smoothCamera.update(Gdx.graphics.getDeltaTime());
-
+        smoothCamera.update(redBall);
 
         // 将绘制与相机投影绑定
-        batch.setProjectionMatrix(camera.combined);
+        batch.setProjectionMatrix(smoothCamera.combined);
         batch.begin();
         redBall.render(batch);
         greenBall.render(batch);
@@ -99,7 +85,7 @@ public class ChainTogether extends Game {
         handleInput();
 
         // 给Box2D世界里的物体绘制轮廓，正式游戏需要注释掉这个渲染
-        debugRenderer.render(world, camera.combined);
+        debugRenderer.render(world, smoothCamera.combined);
 
         // 更新世界里的关系 这个要放在绘制之后，最好放最后面
         world.step(1 / 60f, 6, 2);
@@ -111,7 +97,7 @@ public class ChainTogether extends Game {
         if (Gdx.input.isKeyPressed(Input.Keys.A))
             redBall.move(-0.1f, 0);
         if (Gdx.input.isKeyPressed(Input.Keys.W))
-            redBall.jump(0, 3);
+            redBall.jump(0, 6);
     }
 
 

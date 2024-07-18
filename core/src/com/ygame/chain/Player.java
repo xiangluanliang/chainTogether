@@ -1,19 +1,12 @@
 package com.ygame.chain;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.EllipseMapObject;
-import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
-import com.badlogic.gdx.utils.Array;
 
 import static com.ygame.chain.ConstPool.PPM;
 
@@ -29,12 +22,11 @@ import static com.ygame.chain.ConstPool.PPM;
  */
 
 public class Player {
-    private TextureRegion role;
-    private Body roleBody;
+    private final TextureRegion role;
+    private final Body roleBody;
 
-    private int Height;
-    private int Width;
-
+    private final int Height;
+    private final int Width;
 
     private Sprite sprite;
     private boolean isJump;
@@ -44,7 +36,7 @@ public class Player {
         Texture img = new Texture(path);
         Width = img.getWidth();
         Height = img.getHeight();
-        role = new TextureRegion(img, img.getWidth(), img.getHeight());
+        role = new TextureRegion(img, Width, Height);
 
         BodyDef roleBodyDef = new BodyDef();
         roleBodyDef.type = BodyDef.BodyType.DynamicBody;
@@ -85,7 +77,7 @@ public class Player {
     }
 
     public void move(float x, float y) {
-        if (roleBody.getLinearVelocity().x <= 2) {
+        if (Math.abs(roleBody.getLinearVelocity().x) <= 5) {
             roleBody.applyLinearImpulse(new Vector2(x, y), roleBody.getWorldCenter(), true);
         }
     }
