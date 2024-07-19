@@ -1,0 +1,5014 @@
+[{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 600,
+      "height": 500,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 8.33333,
+      "y": 6.94444
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 300000,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 158.863,
+        "standardDeviation": 105.596,
+        "kurtosis": -1.69189,
+        "skewness": -0.385504,
+        "entropy": 0.329342
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 145.563,
+        "standardDeviation": 124.457,
+        "kurtosis": -1.89177,
+        "skewness": 0.296131,
+        "entropy": 0.215761
+      },
+      "red": {
+        "min": 0,
+        "max": 255,
+        "mean": 174.584,
+        "standardDeviation": 100.438,
+        "kurtosis": -1.49886,
+        "skewness": -0.57798,
+        "entropy": 0.368895
+      },
+      "green": {
+        "min": 0,
+        "max": 255,
+        "mean": 178.163,
+        "standardDeviation": 98.1497,
+        "kurtosis": -1.40882,
+        "skewness": -0.634175,
+        "entropy": 0.367727
+      },
+      "blue": {
+        "min": 0,
+        "max": 255,
+        "mean": 173.269,
+        "standardDeviation": 99.3392,
+        "kurtosis": -1.55811,
+        "skewness": -0.501263,
+        "entropy": 0.364983
+      }
+    },
+    "alpha": "#FFFFFF00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 600,
+      "height": 500,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 0,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "2024-07-19T01:56:17+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "70a3c01306c7fdfa2aa2abde563b444b263aa9ac5ae4f7e24fc2d5dbb2739599",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd"
+    },
+    "tainted": false,
+    "filesize": "2.11256MB",
+    "numberPixels": "300000",
+    "pixelsPerSecond": "6.36778MB",
+    "userTime": "0.050u",
+    "elapsedTime": "0:01.047",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 600,
+      "height": 500,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 8.33333,
+      "y": 6.94444
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 1,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 1,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 300000,
+    "imageStatistics": {
+      "all": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 1.6384e+52,
+        "skewness": 9.375e+35,
+        "entropy": 0
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": 1.6384e+52,
+        "skewness": 9.375e+35,
+        "entropy": 0
+      },
+      "red": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 1.6384e+52,
+        "skewness": 9.375e+35,
+        "entropy": 0
+      },
+      "green": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 1.6384e+52,
+        "skewness": 9.375e+35,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 1.6384e+52,
+        "skewness": 9.375e+35,
+        "entropy": 0
+      }
+    },
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "None",
+    "pageGeometry": {
+      "width": 600,
+      "height": 500,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 1,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "2024-07-19T01:56:17+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "图层 0",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "112863b79ca56f62c3c2e03e9f58c4cd894481c23d09b13eb77e09bc52fc7c55",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 252
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.invisible": "true",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "0",
+      "psd:layer.y": "0"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "300000",
+    "pixelsPerSecond": "2.99418MB",
+    "userTime": "0.110u",
+    "elapsedTime": "0:01.100",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 600,
+      "height": 800,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 8.33333,
+      "y": 11.1111
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 1,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 480000,
+    "imageStatistics": {
+      "all": {
+        "min": 96,
+        "max": 255,
+        "mean": 169.479,
+        "standardDeviation": 1.56915,
+        "kurtosis": -1.87258,
+        "skewness": 0.0951665,
+        "entropy": 0.349761
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "red": {
+        "min": 210,
+        "max": 221,
+        "mean": 219.909,
+        "standardDeviation": 3.28775,
+        "kurtosis": 5.19426,
+        "skewness": -2.68218,
+        "entropy": 0.466348
+      },
+      "green": {
+        "min": 98,
+        "max": 103,
+        "mean": 102.504,
+        "standardDeviation": 1.49443,
+        "kurtosis": 5.19504,
+        "skewness": -2.68218,
+        "entropy": 0.466348
+      },
+      "blue": {
+        "min": 96,
+        "max": 101,
+        "mean": 100.504,
+        "standardDeviation": 1.49443,
+        "kurtosis": 5.19384,
+        "skewness": -2.68218,
+        "entropy": 0.466348
+      }
+    },
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "None",
+    "pageGeometry": {
+      "width": 600,
+      "height": 800,
+      "x": 0,
+      "y": -150
+    },
+    "originGeometry": "+0-150",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 2,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "bg",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "ce4363c54490f3f184df6995644dc59843ddac3e88442378812d177913a7fa3f",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 232
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.invisible": "true",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "0",
+      "psd:layer.y": "-150"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "480000",
+    "pixelsPerSecond": "3.39782MB",
+    "userTime": "0.160u",
+    "elapsedTime": "0:01.141",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 358,
+      "height": 113,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4.97222,
+      "y": 1.56944
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 40454,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 183,
+        "mean": 11.852,
+        "standardDeviation": 13.8767,
+        "kurtosis": 10.1638,
+        "skewness": 3.29031,
+        "entropy": 0.214588
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 72,
+        "mean": 207.592,
+        "standardDeviation": 55.5066,
+        "kurtosis": -0.348781,
+        "skewness": 1.01048,
+        "entropy": 0.85835
+      },
+      "red": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 358,
+      "height": 113,
+      "x": 121,
+      "y": 363
+    },
+    "originGeometry": "+121+363",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 3,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 15",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "47a45abe9c1ffb0a178249311cbae05bd93e8e6ee7ae38079828ec25c6159e44",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 8468
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "121",
+      "psd:layer.y": "363"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "40454",
+    "pixelsPerSecond": "194217B",
+    "userTime": "0.240u",
+    "elapsedTime": "0:01.208",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 353,
+      "height": 361,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4.90278,
+      "y": 5.01389
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 127433,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 86.1758,
+        "standardDeviation": 1e-12,
+        "kurtosis": -0.610244,
+        "skewness": 1.17445,
+        "entropy": 0.00855324
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 4.2967,
+        "standardDeviation": 32.7942,
+        "kurtosis": 54.3937,
+        "skewness": -7.50851,
+        "entropy": 0.0342129
+      },
+      "red": {
+        "min": 26,
+        "max": 26,
+        "mean": 26,
+        "standardDeviation": 1e-12,
+        "kurtosis": -5.23e+51,
+        "skewness": -1.2207e+32,
+        "entropy": 0
+      },
+      "green": {
+        "min": 32,
+        "max": 32,
+        "mean": 32,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 36,
+        "max": 36,
+        "mean": 36,
+        "standardDeviation": 4.74984e-07,
+        "kurtosis": 7.16421e+19,
+        "skewness": -2.68432e+08,
+        "entropy": 0
+      }
+    },
+    "alpha": "#1A202400",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 353,
+      "height": 361,
+      "x": 123,
+      "y": 65
+    },
+    "originGeometry": "+123+65",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 4,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 14 copy 2",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "63b42fc4d9d3311d02a31d919e12c5bf66c023cb9dbcf21508eb6a2a3b51ba2d",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6804
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "123",
+      "psd:layer.y": "65"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "127433",
+    "pixelsPerSecond": "554009B",
+    "userTime": "0.280u",
+    "elapsedTime": "0:01.230",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 353,
+      "height": 357,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4.90278,
+      "y": 4.95833
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 126021,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 86.1699,
+        "standardDeviation": 1e-12,
+        "kurtosis": -0.609904,
+        "skewness": 1.17458,
+        "entropy": 0.00859255
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 4.32057,
+        "standardDeviation": 32.8835,
+        "kurtosis": 54.0661,
+        "skewness": -7.48666,
+        "entropy": 0.0343702
+      },
+      "red": {
+        "min": 26,
+        "max": 26,
+        "mean": 26,
+        "standardDeviation": 1e-12,
+        "kurtosis": -5.127e+51,
+        "skewness": 1.2207e+32,
+        "entropy": 0
+      },
+      "green": {
+        "min": 32,
+        "max": 32,
+        "mean": 32,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 36,
+        "max": 36,
+        "mean": 36,
+        "standardDeviation": 0,
+        "kurtosis": 1.5812e+52,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#1A202400",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 353,
+      "height": 357,
+      "x": 123,
+      "y": 65
+    },
+    "originGeometry": "+123+65",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 5,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 14 copy",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "52688f25100a1fab608de47ae142627dc9712cf1807efa421eaf700ae3513d20",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6800
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "123",
+      "psd:layer.y": "65"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "126021",
+    "pixelsPerSecond": "500870B",
+    "userTime": "0.300u",
+    "elapsedTime": "0:01.251",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 353,
+      "height": 353,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4.90278,
+      "y": 4.90278
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 124609,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 103.664,
+        "standardDeviation": 8.24361,
+        "kurtosis": -0.615921,
+        "skewness": 1.16257,
+        "entropy": 0.00866886
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 4.34497,
+        "standardDeviation": 32.9744,
+        "kurtosis": 53.7347,
+        "skewness": -7.46449,
+        "entropy": 0.0345308
+      },
+      "red": {
+        "min": 47,
+        "max": 47,
+        "mean": 47,
+        "standardDeviation": 6.71728e-07,
+        "kurtosis": 2.24078e+20,
+        "skewness": -8.82713e+11,
+        "entropy": 4.82164e-05
+      },
+      "green": {
+        "min": 56,
+        "max": 56,
+        "mean": 56,
+        "standardDeviation": 6.71728e-07,
+        "kurtosis": 4.15586e+19,
+        "skewness": -1.8981e+08,
+        "entropy": 4.82164e-05
+      },
+      "blue": {
+        "min": 61,
+        "max": 61,
+        "mean": 61,
+        "standardDeviation": 6.71728e-07,
+        "kurtosis": -5.25652e+20,
+        "skewness": 1.69273e+12,
+        "entropy": 4.82164e-05
+      }
+    },
+    "alpha": "#2F383D00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 353,
+      "height": 353,
+      "x": 123,
+      "y": 65
+    },
+    "originGeometry": "+123+65",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 6,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 14",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "5ec15f5655075fd852d581e7c409aec141615d7f60a355fbde232273e571b56a",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6800
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "123",
+      "psd:layer.y": "65"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "124609",
+    "pixelsPerSecond": "443979B",
+    "userTime": "0.330u",
+    "elapsedTime": "0:01.280",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 288,
+      "height": 68,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4,
+      "y": 0.944444
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 19584,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 98.9499,
+        "standardDeviation": 14.5809,
+        "kurtosis": -0.470241,
+        "skewness": 1.2149,
+        "entropy": 0.0198647
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 14.2004,
+        "standardDeviation": 58.3236,
+        "kurtosis": 13.049,
+        "skewness": -3.87694,
+        "entropy": 0.0794587
+      },
+      "red": {
+        "min": 45,
+        "max": 45,
+        "mean": 45,
+        "standardDeviation": 0,
+        "kurtosis": 3.7728e+52,
+        "skewness": -7.02637e+35,
+        "entropy": 0
+      },
+      "green": {
+        "min": 53,
+        "max": 53,
+        "mean": 53,
+        "standardDeviation": 0,
+        "kurtosis": -1.4496e+52,
+        "skewness": 2.69531e+35,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 57,
+        "max": 57,
+        "mean": 57,
+        "standardDeviation": 0,
+        "kurtosis": 4.4192e+52,
+        "skewness": -8.53516e+35,
+        "entropy": 0
+      }
+    },
+    "alpha": "#2D353900",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 288,
+      "height": 68,
+      "x": 156,
+      "y": 285
+    },
+    "originGeometry": "+156+285",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 7,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 6",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "736fdf088df2915ee009bdab4e47880a58c8392f89ef77c98e18087259211b85",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6456
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "156",
+      "psd:layer.y": "285"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "19584",
+    "pixelsPerSecond": "63423B",
+    "userTime": "0.360u",
+    "elapsedTime": "0:01.308",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 278,
+      "height": 48,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 3.86111,
+      "y": 0.666667
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 13344,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 129.22,
+        "standardDeviation": 16.7401,
+        "kurtosis": -1.10635,
+        "skewness": -0.104627,
+        "entropy": 0.0258978
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 19.1181,
+        "standardDeviation": 66.9604,
+        "kurtosis": 8.44595,
+        "skewness": -3.22963,
+        "entropy": 0.103446
+      },
+      "red": {
+        "min": 120,
+        "max": 120,
+        "mean": 120,
+        "standardDeviation": 1.3435e-06,
+        "kurtosis": 1.45895e+19,
+        "skewness": 1.89791e+08,
+        "entropy": 4.82164e-05
+      },
+      "green": {
+        "min": 158,
+        "max": 158,
+        "mean": 158,
+        "standardDeviation": 0,
+        "kurtosis": -7.24992e+53,
+        "skewness": 7.34375e+36,
+        "entropy": 4.82164e-05
+      },
+      "blue": {
+        "min": 3,
+        "max": 3,
+        "mean": 3,
+        "standardDeviation": 0,
+        "kurtosis": 2.44141e+44,
+        "skewness": 0,
+        "entropy": 4.82164e-05
+      }
+    },
+    "alpha": "#789E0300",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 278,
+      "height": 48,
+      "x": 161,
+      "y": 299
+    },
+    "originGeometry": "+161+299",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 8,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 8",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "ea58469179be2bcc84fc9510046cc3153238b2ba8339a80d7cfdb4e9a25b1216",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6520
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "161",
+      "psd:layer.y": "299"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "13344",
+    "pixelsPerSecond": "41420B",
+    "userTime": "0.380u",
+    "elapsedTime": "0:01.322",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 278,
+      "height": 53,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 3.86111,
+      "y": 0.736111
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 14734,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 182.102,
+        "standardDeviation": 16.1101,
+        "kurtosis": -0.938782,
+        "skewness": -0.856663,
+        "entropy": 0.0248496
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 17.5926,
+        "standardDeviation": 64.4403,
+        "kurtosis": 9.59866,
+        "skewness": -3.40316,
+        "entropy": 0.0992536
+      },
+      "red": {
+        "min": 195,
+        "max": 195,
+        "mean": 195,
+        "standardDeviation": 3.79998e-06,
+        "kurtosis": 7.16425e+18,
+        "skewness": -2.85855e+10,
+        "entropy": 4.82164e-05
+      },
+      "green": {
+        "min": 240,
+        "max": 240,
+        "mean": 240,
+        "standardDeviation": 2.68699e-06,
+        "kurtosis": 1.49139e+19,
+        "skewness": 1.89793e+08,
+        "entropy": 4.82164e-05
+      },
+      "blue": {
+        "min": 56,
+        "max": 56,
+        "mean": 56,
+        "standardDeviation": 6.71748e-07,
+        "kurtosis": -4.35889e+18,
+        "skewness": -1.89793e+08,
+        "entropy": 4.82164e-05
+      }
+    },
+    "alpha": "#C3F03800",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 278,
+      "height": 53,
+      "x": 161,
+      "y": 290
+    },
+    "originGeometry": "+161+290",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 9,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 7",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "401d007555c96a2e926480038937373a4d56163910b9061041e8b76dd4dba281",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6512
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "161",
+      "psd:layer.y": "290"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "14734",
+    "pixelsPerSecond": "44073B",
+    "userTime": "0.390u",
+    "elapsedTime": "0:01.334",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 278,
+      "height": 53,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 3.86111,
+      "y": 0.736111
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 16,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 16,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 14734,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 221.042,
+        "standardDeviation": 8.08663,
+        "kurtosis": 1.28952,
+        "skewness": -1.51412,
+        "entropy": 0.0248496
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 127,
+        "mean": 135.831,
+        "standardDeviation": 32.3465,
+        "kurtosis": 9.59865,
+        "skewness": -3.40316,
+        "entropy": 0.0992536
+      },
+      "red": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 2.68699e-06,
+        "kurtosis": -3,
+        "skewness": 3.03669e+09,
+        "entropy": 4.82164e-05
+      },
+      "green": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 2.68699e-06,
+        "kurtosis": -3,
+        "skewness": 3.03669e+09,
+        "entropy": 4.82164e-05
+      },
+      "blue": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 2.68699e-06,
+        "kurtosis": -3,
+        "skewness": 3.03669e+09,
+        "entropy": 4.82164e-05
+      }
+    },
+    "alpha": "#FFFFFF00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 278,
+      "height": 53,
+      "x": 161,
+      "y": 290
+    },
+    "originGeometry": "+161+290",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 10,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 7 copy",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "83ebee56e6870106e42936c4b505dbad9c7963a0fa4d4b5edb639cad7488d797",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6552
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "32896",
+      "psd:layer.x": "161",
+      "psd:layer.y": "290"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "14734",
+    "pixelsPerSecond": "42752B",
+    "userTime": "0.400u",
+    "elapsedTime": "0:01.344",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 54,
+      "height": 15,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.75,
+      "y": 0.208333
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 4,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 810,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 43.3,
+        "standardDeviation": 40.9158,
+        "kurtosis": 3.98395,
+        "skewness": 2.27508,
+        "entropy": 0.889527
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 143.115,
+        "standardDeviation": 111.877,
+        "kurtosis": -1.71542,
+        "skewness": 0.251844,
+        "entropy": 0.619404
+      },
+      "red": {
+        "min": 0,
+        "max": 30,
+        "mean": 17.5185,
+        "standardDeviation": 14.7962,
+        "kurtosis": -1.88672,
+        "skewness": -0.340008,
+        "entropy": 0.979568
+      },
+      "green": {
+        "min": 0,
+        "max": 36,
+        "mean": 21.0222,
+        "standardDeviation": 17.7554,
+        "kurtosis": -1.88672,
+        "skewness": -0.340008,
+        "entropy": 0.979568
+      },
+      "blue": {
+        "min": 0,
+        "max": 39,
+        "mean": 22.7741,
+        "standardDeviation": 19.2351,
+        "kurtosis": -1.88672,
+        "skewness": -0.340008,
+        "entropy": 0.979568
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 54,
+      "height": 15,
+      "x": 273,
+      "y": 311
+    },
+    "originGeometry": "+273+311",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 11,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "login",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "3fd733c641b9511edc44c5b7d953ef08b123acfc07f1671861bcac50d4828df0",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 9820
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "273",
+      "psd:layer.y": "311"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "810",
+    "pixelsPerSecond": "2283B",
+    "userTime": "0.410u",
+    "elapsedTime": "0:01.354",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 288,
+      "height": 43,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4,
+      "y": 0.597222
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 12384,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 249.772,
+        "standardDeviation": 17.4414,
+        "kurtosis": 43.8916,
+        "skewness": -6.77073,
+        "entropy": 0.026547
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 20.9121,
+        "standardDeviation": 69.7655,
+        "kurtosis": 7.30739,
+        "skewness": -3.04847,
+        "entropy": 0.106188
+      },
+      "red": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "green": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      }
+    },
+    "alpha": "#FFFFFF00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 288,
+      "height": 43,
+      "x": 156,
+      "y": 225
+    },
+    "originGeometry": "+156+225",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 12,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 4 copy 4",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "4d344c280865ff98be0cc179b6bfdd23309f01fd16afe07ee4d67522611af78e",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6468
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "156",
+      "psd:layer.y": "225"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "12384",
+    "pixelsPerSecond": "34019B",
+    "userTime": "0.420u",
+    "elapsedTime": "0:01.364",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 59,
+      "height": 11,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.819444,
+      "y": 0.152778
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 4,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 649,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 43.3814,
+        "standardDeviation": 50.6443,
+        "kurtosis": 3.49491,
+        "skewness": 1.84194,
+        "entropy": 0.911324
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 177.622,
+        "standardDeviation": 98.7939,
+        "kurtosis": -1.06367,
+        "skewness": 0.778242,
+        "entropy": 0.657645
+      },
+      "red": {
+        "min": 0,
+        "max": 61,
+        "mean": 28.1972,
+        "standardDeviation": 30.4364,
+        "kurtosis": -1.98022,
+        "skewness": 0.151084,
+        "entropy": 0.995884
+      },
+      "green": {
+        "min": 0,
+        "max": 71,
+        "mean": 32.8197,
+        "standardDeviation": 35.426,
+        "kurtosis": -1.98022,
+        "skewness": 0.151084,
+        "entropy": 0.995884
+      },
+      "blue": {
+        "min": 0,
+        "max": 76,
+        "mean": 35.131,
+        "standardDeviation": 37.9208,
+        "kurtosis": -1.98022,
+        "skewness": 0.151084,
+        "entropy": 0.995884
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 59,
+      "height": 11,
+      "x": 201,
+      "y": 240
+    },
+    "originGeometry": "+201+240",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 13,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Password",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "f113dc16543ca69b4f115e5839625631bbd71deefc87fab9b504b32e9d04fe61",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 9864
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "201",
+      "psd:layer.y": "240"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "649",
+    "pixelsPerSecond": "1727B",
+    "userTime": "0.430u",
+    "elapsedTime": "0:01.375",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 12,
+      "height": 16,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.166667,
+      "y": 0.222222
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 192,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 44.4909,
+        "standardDeviation": 24.7733,
+        "kurtosis": 0.94011,
+        "skewness": 1.67334,
+        "entropy": 0.171836
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 77.0365,
+        "standardDeviation": 99.0934,
+        "kurtosis": -0.860456,
+        "skewness": -0.904332,
+        "entropy": 0.687344
+      },
+      "red": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 12,
+      "height": 16,
+      "x": 172,
+      "y": 238
+    },
+    "originGeometry": "+172+238",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 14,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "lock",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "81b9784b281b051bd383fb64632024023b38e29dfbd68cea8312857b9f622935",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 8516
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "172",
+      "psd:layer.y": "238"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "192",
+    "pixelsPerSecond": "499B",
+    "userTime": "0.440u",
+    "elapsedTime": "0:01.384",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 288,
+      "height": 43,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 4,
+      "y": 0.597222
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 12384,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 249.772,
+        "standardDeviation": 17.4414,
+        "kurtosis": 43.8916,
+        "skewness": -6.77073,
+        "entropy": 0.026547
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 20.9121,
+        "standardDeviation": 69.7655,
+        "kurtosis": 7.30739,
+        "skewness": -3.04847,
+        "entropy": 0.106188
+      },
+      "red": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "green": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      }
+    },
+    "alpha": "#FFFFFF00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 288,
+      "height": 43,
+      "x": 156,
+      "y": 165
+    },
+    "originGeometry": "+156+165",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 15,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 4",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "4d344c280865ff98be0cc179b6bfdd23309f01fd16afe07ee4d67522611af78e",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6456
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "156",
+      "psd:layer.y": "165"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "12384",
+    "pixelsPerSecond": "31294B",
+    "userTime": "0.450u",
+    "elapsedTime": "0:01.395",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 63,
+      "height": 10,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.875,
+      "y": 0.138889
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 4,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 630,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 45.5016,
+        "standardDeviation": 50.6489,
+        "kurtosis": 3.31392,
+        "skewness": 1.7793,
+        "entropy": 0.921072
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 175.343,
+        "standardDeviation": 98.5259,
+        "kurtosis": -1.1096,
+        "skewness": 0.739427,
+        "entropy": 0.684833
+      },
+      "red": {
+        "min": 0,
+        "max": 61,
+        "mean": 30.0159,
+        "standardDeviation": 30.5204,
+        "kurtosis": -2.00217,
+        "skewness": 0.0316745,
+        "entropy": 0.999818
+      },
+      "green": {
+        "min": 0,
+        "max": 71,
+        "mean": 34.9365,
+        "standardDeviation": 35.5237,
+        "kurtosis": -2.00217,
+        "skewness": 0.0316745,
+        "entropy": 0.999818
+      },
+      "blue": {
+        "min": 0,
+        "max": 76,
+        "mean": 37.3968,
+        "standardDeviation": 38.0254,
+        "kurtosis": -2.00217,
+        "skewness": 0.0316745,
+        "entropy": 0.999818
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 63,
+      "height": 10,
+      "x": 201,
+      "y": 181
+    },
+    "originGeometry": "+201+181",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 16,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Username",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "7eed4571643be12edbffb4939dfcac66e81e99f5f5062cb8e9d6fe5285b56384",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 9864
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "201",
+      "psd:layer.y": "181"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "630",
+    "pixelsPerSecond": "1546B",
+    "userTime": "0.460u",
+    "elapsedTime": "0:01.407",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 16,
+      "height": 16,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.222222,
+      "y": 0.222222
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 256,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 30.2275,
+        "standardDeviation": 29.7016,
+        "kurtosis": 3.57057,
+        "skewness": 2.32823,
+        "entropy": 0.13947
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 134.09,
+        "standardDeviation": 118.806,
+        "kurtosis": -1.89239,
+        "skewness": 0.0758643,
+        "entropy": 0.557881
+      },
+      "red": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 16,
+      "height": 16,
+      "x": 170,
+      "y": 179
+    },
+    "originGeometry": "+170+179",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 17,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "user",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "4746101cdd3ecc0c0dc458097fc2267ff9ed2842d1e008faaf33edba38e385ff",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 8516
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "170",
+      "psd:layer.y": "179"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "256",
+    "pixelsPerSecond": "611B",
+    "userTime": "0.470u",
+    "elapsedTime": "0:01.419",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 120,
+      "height": 32,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 1.66667,
+      "y": 0.444444
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 3840,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 110,
+        "mean": 7.88672,
+        "standardDeviation": 8.47343,
+        "kurtosis": 8.88343,
+        "skewness": 3.10227,
+        "entropy": 0.218947
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 145,
+        "mean": 223.453,
+        "standardDeviation": 33.8937,
+        "kurtosis": -0.571169,
+        "skewness": 0.890285,
+        "entropy": 0.875788
+      },
+      "red": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 120,
+      "height": 32,
+      "x": 240,
+      "y": 91
+    },
+    "originGeometry": "+240+91",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 18,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "shadow",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "952fe08fddea95d65e3896c7dc5be574febe14e6f7bf08a68ec2a4ff16dbb1a5",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 8448
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "240",
+      "psd:layer.y": "91"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "3840",
+    "pixelsPerSecond": "8861B",
+    "userTime": "0.490u",
+    "elapsedTime": "0:01.433",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 18,
+      "height": 18,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.25,
+      "y": 0.25
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 324,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 86.6088,
+        "standardDeviation": 30.4364,
+        "kurtosis": 1.86442,
+        "skewness": 1.65535,
+        "entropy": 0.128878
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 116.565,
+        "standardDeviation": 121.746,
+        "kurtosis": -1.91163,
+        "skewness": -0.185145,
+        "entropy": 0.515511
+      },
+      "red": {
+        "min": 61,
+        "max": 61,
+        "mean": 61,
+        "standardDeviation": 0,
+        "kurtosis": -1.28e+50,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 71,
+        "max": 71,
+        "mean": 71,
+        "standardDeviation": 0,
+        "kurtosis": -3.2e+50,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 76,
+        "max": 76,
+        "mean": 76,
+        "standardDeviation": 0,
+        "kurtosis": 6.4e+50,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#3D474C00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 18,
+      "height": 18,
+      "x": 342,
+      "y": 91
+    },
+    "originGeometry": "+342+91",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 19,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 11",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "6fab48f1d6c3892457f504b27f1763468baeb4f820af47e354d6f61671e77d88",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6336
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "342",
+      "psd:layer.y": "91"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "324",
+    "pixelsPerSecond": "723B",
+    "userTime": "0.500u",
+    "elapsedTime": "0:01.448",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 18,
+      "height": 18,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.25,
+      "y": 0.25
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 324,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 86.6088,
+        "standardDeviation": 30.4364,
+        "kurtosis": 1.86442,
+        "skewness": 1.65535,
+        "entropy": 0.128878
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 116.565,
+        "standardDeviation": 121.746,
+        "kurtosis": -1.91163,
+        "skewness": -0.185145,
+        "entropy": 0.515511
+      },
+      "red": {
+        "min": 61,
+        "max": 61,
+        "mean": 61,
+        "standardDeviation": 0,
+        "kurtosis": -1.28e+50,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 71,
+        "max": 71,
+        "mean": 71,
+        "standardDeviation": 0,
+        "kurtosis": -3.2e+50,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 76,
+        "max": 76,
+        "mean": 76,
+        "standardDeviation": 0,
+        "kurtosis": 6.4e+50,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#3D474C00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 18,
+      "height": 18,
+      "x": 240,
+      "y": 91
+    },
+    "originGeometry": "+240+91",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 20,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 11 copy",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "6fab48f1d6c3892457f504b27f1763468baeb4f820af47e354d6f61671e77d88",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6348
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "240",
+      "psd:layer.y": "91"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "324",
+    "pixelsPerSecond": "700B",
+    "userTime": "0.510u",
+    "elapsedTime": "0:01.462",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 111,
+      "height": 11,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 1.54167,
+      "y": 0.152778
+    },
+    "units": "PixelsPerInch",
+    "type": "GrayscaleAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 1221,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 193.628,
+        "standardDeviation": 29.1383,
+        "kurtosis": 5.85437,
+        "skewness": -2.44916,
+        "entropy": 0.0817403
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 77.4865,
+        "standardDeviation": 116.553,
+        "kurtosis": -1.26205,
+        "skewness": -0.853768,
+        "entropy": 0.326961
+      },
+      "red": {
+        "min": 199,
+        "max": 199,
+        "mean": 199,
+        "standardDeviation": 0,
+        "kurtosis": 5.03808e+53,
+        "skewness": -1.625e+36,
+        "entropy": 0
+      },
+      "green": {
+        "min": 199,
+        "max": 199,
+        "mean": 199,
+        "standardDeviation": 0,
+        "kurtosis": 5.03808e+53,
+        "skewness": -1.625e+36,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 199,
+        "max": 199,
+        "mean": 199,
+        "standardDeviation": 0,
+        "kurtosis": 5.03808e+53,
+        "skewness": -1.625e+36,
+        "entropy": 0
+      }
+    },
+    "alpha": "#C7C7C700",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 111,
+      "height": 11,
+      "x": 244,
+      "y": 94
+    },
+    "originGeometry": "+244+94",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 21,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Shape 9",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "9b605022adfc76fee268d34a365e8d226d17a642c99682ba043673f732d79b41",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6976
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "244",
+      "psd:layer.y": "94"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "1221",
+    "pixelsPerSecond": "2556B",
+    "userTime": "0.530u",
+    "elapsedTime": "0:01.477",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 111,
+      "height": 14,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 1.54167,
+      "y": 0.194444
+    },
+    "units": "PixelsPerInch",
+    "type": "GrayscaleAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 4,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 1554,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 72.1335,
+        "standardDeviation": 99.4378,
+        "kurtosis": -1.41005,
+        "skewness": 0.720376,
+        "entropy": 0.84656
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 196.474,
+        "standardDeviation": 92.0691,
+        "kurtosis": -0.115753,
+        "skewness": 1.23522,
+        "entropy": 0.554113
+      },
+      "red": {
+        "min": 0,
+        "max": 212,
+        "mean": 76.6692,
+        "standardDeviation": 101.894,
+        "kurtosis": -1.67006,
+        "skewness": 0.575341,
+        "entropy": 0.944042
+      },
+      "green": {
+        "min": 0,
+        "max": 212,
+        "mean": 76.6692,
+        "standardDeviation": 101.894,
+        "kurtosis": -1.67006,
+        "skewness": 0.575341,
+        "entropy": 0.944042
+      },
+      "blue": {
+        "min": 0,
+        "max": 212,
+        "mean": 76.6692,
+        "standardDeviation": 101.894,
+        "kurtosis": -1.67006,
+        "skewness": 0.575341,
+        "entropy": 0.944042
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "None",
+    "pageGeometry": {
+      "width": 111,
+      "height": 14,
+      "x": 330,
+      "y": 371
+    },
+    "originGeometry": "+330+371",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 22,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Forgot Password?",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "f0c16c552a4be2f7b648cb2d5fa4aae1810f3fbfc553da12c881be32257f71a2",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 9912
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.invisible": "true",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "330",
+      "psd:layer.y": "371"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "1554",
+    "pixelsPerSecond": "3160B",
+    "userTime": "0.540u",
+    "elapsedTime": "0:01.491",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 23,
+      "height": 23,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.319444,
+      "y": 0.319444
+    },
+    "units": "PixelsPerInch",
+    "type": "GrayscaleAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 529,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 190.514,
+        "standardDeviation": 27.875,
+        "kurtosis": 6.0815,
+        "skewness": -2.3089,
+        "entropy": 0.0931692
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 68.9433,
+        "standardDeviation": 111.5,
+        "kurtosis": -0.901611,
+        "skewness": -1.03592,
+        "entropy": 0.372677
+      },
+      "red": {
+        "min": 192,
+        "max": 192,
+        "mean": 192,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 192,
+        "max": 192,
+        "mean": 192,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 192,
+        "max": 192,
+        "mean": 192,
+        "standardDeviation": 0,
+        "kurtosis": -3,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#C0C0C000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 23,
+      "height": 23,
+      "x": 158,
+      "y": 366
+    },
+    "originGeometry": "+158+366",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 23,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "checkbox",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "e21d07e33cc8059e843f15e7af6ec3d370753553988388e18b127a80ac3552a6",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6440
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "158",
+      "psd:layer.y": "366"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "529",
+    "pixelsPerSecond": "1048B",
+    "userTime": "0.560u",
+    "elapsedTime": "0:01.504",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 16,
+      "height": 13,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 0.222222,
+      "y": 0.180556
+    },
+    "units": "PixelsPerInch",
+    "type": "TrueColorAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 208,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 62.6671,
+        "standardDeviation": 24.4754,
+        "kurtosis": 7.02225,
+        "skewness": 2.18665,
+        "entropy": 0.122421
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 196.332,
+        "standardDeviation": 97.9017,
+        "kurtosis": -0.265651,
+        "skewness": 1.22759,
+        "entropy": 0.489683
+      },
+      "red": {
+        "min": 57,
+        "max": 57,
+        "mean": 57,
+        "standardDeviation": 0,
+        "kurtosis": 1.92e+50,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "green": {
+        "min": 65,
+        "max": 65,
+        "mean": 65,
+        "standardDeviation": 0,
+        "kurtosis": 2.24e+50,
+        "skewness": 0,
+        "entropy": 0
+      },
+      "blue": {
+        "min": 70,
+        "max": 70,
+        "mean": 70,
+        "standardDeviation": 0,
+        "kurtosis": 4.48e+50,
+        "skewness": 0,
+        "entropy": 0
+      }
+    },
+    "alpha": "#39414600",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 16,
+      "height": 13,
+      "x": 162,
+      "y": 372
+    },
+    "originGeometry": "+162+372",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 24,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "check mark",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "2670e7f9ada9f434fe84d40a2c6f8a929cc8c62bd9e802a912eed9c7007a672c",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 6416
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "162",
+      "psd:layer.y": "372"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "208",
+    "pixelsPerSecond": "401B",
+    "userTime": "0.570u",
+    "elapsedTime": "0:01.518",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 147,
+      "height": 13,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 2.04167,
+      "y": 0.180556
+    },
+    "units": "PixelsPerInch",
+    "type": "GrayscaleAlpha",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 4,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 1911,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 74.7422,
+        "standardDeviation": 100.378,
+        "kurtosis": -1.48764,
+        "skewness": 0.664427,
+        "entropy": 0.856172
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 193.325,
+        "standardDeviation": 93.8448,
+        "kurtosis": -0.329023,
+        "skewness": 1.15315,
+        "entropy": 0.565612
+      },
+      "red": {
+        "min": 0,
+        "max": 212,
+        "mean": 79.0979,
+        "standardDeviation": 102.556,
+        "kurtosis": -1.72595,
+        "skewness": 0.524358,
+        "entropy": 0.953025
+      },
+      "green": {
+        "min": 0,
+        "max": 212,
+        "mean": 79.0979,
+        "standardDeviation": 102.556,
+        "kurtosis": -1.72595,
+        "skewness": 0.524358,
+        "entropy": 0.953025
+      },
+      "blue": {
+        "min": 0,
+        "max": 212,
+        "mean": 79.0979,
+        "standardDeviation": 102.556,
+        "kurtosis": -1.72595,
+        "skewness": 0.524358,
+        "entropy": 0.953025
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 147,
+      "height": 13,
+      "x": 185,
+      "y": 372
+    },
+    "originGeometry": "+185+372",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 25,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "Accept User Agreement",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "db6b9fefeb2308decea51c246955145bfee8f866408cb08f3aae9ca3bbab6fc8",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 9928
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "185",
+      "psd:layer.y": "372"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "1911",
+    "pixelsPerSecond": "3584B",
+    "userTime": "0.580u",
+    "elapsedTime": "0:01.533",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+,
+{
+  "version": "1.0",
+  "image": {
+    "name": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+    "permissions": 644,
+    "format": "PSD",
+    "formatDescription": "Adobe Photoshop bitmap",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 156,
+      "height": 15,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 72,
+      "y": 72
+    },
+    "printSize": {
+      "x": 2.16667,
+      "y": 0.208333
+    },
+    "units": "PixelsPerInch",
+    "type": "Bilevel",
+    "endianness": "MSB",
+    "colorspace": "sRGB",
+    "depth": 4,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 4,
+      "red": 1,
+      "green": 1,
+      "blue": 1
+    },
+    "pixels": 2340,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 129.198,
+        "standardDeviation": 123.667,
+        "kurtosis": -1.95799,
+        "skewness": -0.024852,
+        "entropy": 0.887535
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 148.823,
+        "standardDeviation": 113.12,
+        "kurtosis": -1.68237,
+        "skewness": 0.34187,
+        "entropy": 0.561843
+      },
+      "red": {
+        "min": 0,
+        "max": 255,
+        "mean": 136.872,
+        "standardDeviation": 127.182,
+        "kurtosis": -1.97914,
+        "skewness": -0.147313,
+        "entropy": 0.996099
+      },
+      "green": {
+        "min": 0,
+        "max": 255,
+        "mean": 136.872,
+        "standardDeviation": 127.182,
+        "kurtosis": -1.97914,
+        "skewness": -0.147313,
+        "entropy": 0.996099
+      },
+      "blue": {
+        "min": 0,
+        "max": 255,
+        "mean": 136.872,
+        "standardDeviation": 127.182,
+        "kurtosis": -1.97914,
+        "skewness": -0.147313,
+        "entropy": 0.996099
+      }
+    },
+    "alpha": "#00000000",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 156,
+      "height": 15,
+      "x": 223,
+      "y": 129
+    },
+    "originGeometry": "+223+129",
+    "dispose": "Undefined",
+    "iterations": 0,
+    "scene": 26,
+    "scenes": 27,
+    "compression": "RLE",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2024-07-19T01:56:17+00:00",
+      "date:modify": "2024-07-19T01:56:17+00:00",
+      "date:timestamp": "1970-01-01T00:00:00+00:00",
+      "dc:format": "application/vnd.adobe.photoshop",
+      "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+      "icc:description": "sRGB IEC61966-2.1",
+      "icc:manufacturer": "IEC http://www.iec.ch",
+      "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "label": "CHAIN TOGETHER",
+      "photoshop:ColorMode": "3",
+      "photoshop:ICCProfile": "sRGB IEC61966-2.1",
+      "signature": "93c0a50821819cef53ce55b9220c10505b6c81c710b563bcc46671b9153c8257",
+      "tiff:XResolution": "72",
+      "tiff:YResolution": "72",
+      "xmp:CreateDate": "2012-10-12T20:38:39+05:30",
+      "xmp:CreatorTool": "Adobe Photoshop CS5.1 Windows",
+      "xmp:MetadataDate": "2024-07-19T09:55:42+08:00",
+      "xmp:ModifyDate": "2024-07-19T09:55:42+08:00",
+      "xmpMM:DocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA",
+      "xmpMM:InstanceID": "xmp.iid:ccaa7cfe-7001-1f43-81cf-bc34df36d664",
+      "xmpMM:OriginalDocumentID": "xmp.did:1D7E7DDD7E14E211A73D9DE3BB914ECA"
+    },
+    "profiles": {
+      "8bim": {
+        "length": 27396
+      },
+      "exif": {
+        "length": 306
+      },
+      "icc": {
+        "length": 3144
+      },
+      "iptc": {
+        "City[1,90]": ["0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G","0x00000000: 254700                                        -%G"],
+        "Unknown[2,0]": ["0x00000000: ff00                                          --"],
+        "length": 39
+      },
+      "psd:additional-info": {
+        "length": 15628
+      },
+      "xmp": {
+        "length": 16246
+      }
+    },
+    "artifacts": {
+      "filename": "../tmp/4699923299912199912623022/cHNkNzc2MA==.psd",
+      "psd:layer.opacity": "65535",
+      "psd:layer.x": "223",
+      "psd:layer.y": "129"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "2340",
+    "pixelsPerSecond": "4284B",
+    "userTime": "0.600u",
+    "elapsedTime": "0:01.546",
+    "version": "ImageMagick 6.9.12-93 Q16 x86_64 17898 https://legacy.imagemagick.org"
+  }
+}
+]
