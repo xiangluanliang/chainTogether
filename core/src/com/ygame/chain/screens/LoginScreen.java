@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
+import com.ygame.chain.Client.GameClient;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -97,7 +98,9 @@ public class LoginScreen implements Screen {
 //                Gdx.app.log("aaaa","aaa");
                 // Send login request to server
 
-                game.setScreen(new Level1());
+                new Thread(new GameClient()).start();
+
+//                game.setScreen(new Level1());
             }
         });
 
