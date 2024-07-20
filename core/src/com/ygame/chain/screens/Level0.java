@@ -6,13 +6,16 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ygame.chain.Client.GameClient;
 import com.ygame.chain.utils.GameMapGenerator;
 import com.ygame.chain.utils.Player;
 import com.ygame.chain.utils.SmoothCamera;
+
+import java.io.IOException;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -69,7 +72,11 @@ public class Level0 implements Screen {
 
         redBall = new Player("./ball/smallRedBall.png", world, 1, 2);
 
-        new GameClient(redBall);
+        try {
+            new GameClient(LoginScreen.getServerAddress(), 12345);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 //        greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
 //        purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);

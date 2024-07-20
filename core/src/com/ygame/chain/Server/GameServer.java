@@ -6,72 +6,48 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-/**
- * ProjectName: chain_together_Yhr
- * ClassName: GameServer
- * Package : com.ygame.chain.network
- * Description:
- *
- * @Author Lxl
- * @Create 2024/7/18 17:00
- * @Version 1.0
- */
-public class GameServer implements Runnable {
-    private static final int PORT = 12345;
-    private static Set<ClientHandler> clientHandlers = new HashSet<>();//ConcurrentHashMap.newKeySet();
-    private static int connectedPlayers = 0;
+public class GameServer {
+    private ServerSocket serverSocket;
+    private ExecutorService executorService = Executors.newCachedThreadPool();
 
-    @Override
-    public void run() {
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            System.out.println("Server started on port " + PORT);
+    public GameServer(int port) throws IOException {
+        serverSocket = new ServerSocket(port);
+        System.out.println("Server started on port " + port);
+        while (true) {
+            Socket clientSocket = serverSocket.accept();
+            executorService.execute(new ClientHandler(clientSocket));
+        }
+    }
 
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("New client connected");
-                ClientHandler clientHandler = new ClientHandler(clientSocket);
-                clientHandlers.add(clientHandler);
-                new Thread(clientHandler).start();
-            }
+    public static void main(String[] args) {
+        try {
+            new GameServer(12345);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void broadcast(String message) {
-        for (ClientHandler clientHandler : clientHandlers) {
-            clientHandler.sendMessage(message);
-        }
-    }
-
-    static class ClientHandler implements Runnable {
+    private static class ClientHandler implements Runnable {
         private Socket socket;
-        private PrintWriter out;
         private BufferedReader in;
+        private PrintWriter out;
 
-        public ClientHandler(Socket socket) {
+        public ClientHandler(Socket socket) throws IOException {
             this.socket = socket;
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new PrintWriter(socket.getOutputStream(), true);
         }
 
         @Override
         public void run() {
             try {
-                out = new PrintWriter(socket.getOutputStream(), true);
-                in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-                String inputLine;
-                while ((inputLine = in.readLine()) != null) {
-                    System.out.println("Received: " + inputLine);
-                    if (inputLine.startsWith("LOGIN")) {
-                        handleLogin(inputLine);
-                    } else if (inputLine.startsWith("MOVE")) {
-                        handleMove(inputLine);
-                    } else if (inputLine.startsWith("START")) {
-                        handleStart(inputLine);
-                    }
+                String input;
+                while ((input = in.readLine()) != null) {
+                    System.out.println("Received: " + input);
+                    out.println("Echo: " + input);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -82,26 +58,6 @@ public class GameServer implements Runnable {
                     e.printStackTrace();
                 }
             }
-        }
-
-        private void handleLogin(String inputLine) {
-            connectedPlayers++;
-            broadcast("PLAYER_CONNECTED " + connectedPlayers);
-            if (connectedPlayers == 3) {
-                broadcast("ALL_PLAYERS_CONNECTED");
-            }
-        }
-
-        private void handleMove(String inputLine) {
-            broadcast(inputLine);
-        }
-
-        private void handleStart(String inputLine) {
-            broadcast("START_GAME");
-        }
-
-        public void sendMessage(String message) {
-            out.println(message);
         }
     }
 }
