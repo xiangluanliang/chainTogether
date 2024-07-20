@@ -11,12 +11,14 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.ygame.chain.Client.GameClient;
-import jdk.javadoc.internal.doclets.formats.html.markup.Text;
-import sun.security.x509.IPAddressName;
+
+
+import javax.swing.*;
+import java.net.InetAddress;
+import java.sql.*;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -56,7 +58,6 @@ public class LoginScreen implements Screen {
 
         stage.addActor(createLoginTable());
 
-
     }
 
     private Table createLoginTable() {
@@ -82,47 +83,60 @@ public class LoginScreen implements Screen {
 
         TextButton loginButton = new TextButton("Login", VisUI.getSkin());
         TextButton registerButton = new TextButton("Register", VisUI.getSkin());
+        TextButton exitButton = new TextButton("Exit", VisUI.getSkin());
 
         // 创建表格布局
         Table loginTable = new Table();
         loginTable.setFillParent(true);
-        loginTable.add(titleLabel).colspan(2).center().padBottom(50);
+        loginTable.add(titleLabel).colspan(3).center().padBottom(50);
 
         loginTable.row();
         loginTable.add(idText).left();
-        loginTable.add(idField).fillX().uniformX().padBottom(10);
+        loginTable.add(idField).colspan(2).fillX().uniformX().padBottom(10);
 
         loginTable.row();
         loginTable.add(passwordText).left();
-        loginTable.add(passwordField).fillX().uniformX().padBottom(20);
+        loginTable.add(passwordField).colspan(2).fillX().uniformX().padBottom(20);
 
+        loginTable.row();
+        loginTable.add().uniformY().padBottom(60);
         loginTable.row();
         loginTable.add(loginButton).center();
         loginTable.add(registerButton).center();
+        loginTable.add(exitButton).center();
 
         loginButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                String id = idField.getText();
+                String userID = idField.getText();
                 String password = passwordField.getText();
-//                Gdx.app.log("aaaa","aaa");
-                // Send login request to server
+                if (iflogin(userID, password)) {
+                    JOptionPane.showMessageDialog(null, "Welcome！", "Message", -1);
+                    loginTable.remove();
+                    stage.addActor(createRoomTable());
+                } else {
+                    JOptionPane.showMessageDialog(null, "User not found！", "Message", -1);
+                }
 
-//                new Thread(new GameClient()).start();
 
-//                game.setScreen(new Level1());
-                loginTable.remove();
-                stage.addActor(createRoomTable());
             }
         });
 
         registerButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                String id = idField.getText();
+                String userID = idField.getText();
                 String password = passwordField.getText();
+                actionPerformed(userID, password);
                 // Send register request to server
 
+            }
+        });
+
+        exitButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Gdx.app.exit();
             }
         });
 
@@ -134,8 +148,10 @@ public class LoginScreen implements Screen {
 
         TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
         TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
+        TextButton exitButton = new TextButton("Exit", VisUI.getSkin());
         enterRoomButton.setColor(Color.RED);
         createRoomButton.setColor(Color.RED);
+        exitButton.setColor(Color.RED);
 
         Table createRoomTable = new Table();
         createRoomTable.setFillParent(true);
@@ -145,6 +161,9 @@ public class LoginScreen implements Screen {
 
         createRoomTable.row();
         createRoomTable.add(enterRoomButton).center().uniform().padBottom(50);
+
+        createRoomTable.row();
+        createRoomTable.add(exitButton).center().uniform().padBottom(50);
 
         enterRoomButton.addListener(new ChangeListener() {
             @Override
@@ -165,7 +184,15 @@ public class LoginScreen implements Screen {
         createRoomButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
+//                new Thread(new GameClient()).start();
                 game.setScreen(new Level1());
+            }
+        });
+
+        exitButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Gdx.app.exit();
             }
         });
 
@@ -193,6 +220,69 @@ public class LoginScreen implements Screen {
 
         dialog.show(stage);
 
+    }
+
+    public static boolean iflogin(String userID, String password) {
+        if (userID == null && password == null) {
+            JOptionPane.showMessageDialog(null, "账号或密码不能为空");
+            return false;
+        }
+        Connection con;//代表数据库连接
+        PreparedStatement pre;//用于执行预编译的SQL语句
+        ResultSet resultSet;//存储了从数据库查询返回的结果集
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfor", "root", "orange741216");
+            System.out.println(con.isReadOnly());
+            String sql = "SELECT * FROM user WHERE userID=? AND password=?";
+            pre = con.prepareStatement(sql);//将SQL查询语句作为参数传入
+            pre.setString(1, userID);
+            pre.setString(2, password);
+            resultSet = pre.executeQuery();//执行查询，并将返回的结果集赋值
+            return resultSet.next();//判断结果集中是否有记录（如果有只会有一条）
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void actionPerformed(String userID, String password) {
+
+        if (userID.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "账号或密码不能为空");
+            return;
+        }
+        Connection con = null;
+        PreparedStatement pre = null;
+        ResultSet rs = null;//存储了从数据库查询返回的结果集
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfor", "root", "orange741216");
+            //检查用户名是否已存在在
+            String sql = "SELECT * FROM user WHERE userID=? ";
+            pre = con.prepareStatement(sql);
+            pre.setString(1, userID);
+            rs = pre.executeQuery();//执行查询，并将返回的结果集赋值
+
+            if (rs.next()) {       //判断用户名是否重复
+                JOptionPane.showMessageDialog(null, "用户名已经存在");
+            } else {
+                String sql2 = "INSERT INTO user(userId, password) VALUES (?, ?)";
+                pre = con.prepareStatement(sql2);
+                pre.setString(1, userID);
+                pre.setString(2, password);
+                pre.executeUpdate();
+                JOptionPane.showMessageDialog(null, "注册成功！请再次登录以开始游戏.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("注册失败！", e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pre != null) pre.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -228,9 +318,10 @@ public class LoginScreen implements Screen {
         backgroundImage2.setSize(width, height);
     }
 
-        public interface InputListener {
-            void input(String input);
-        }
+    public interface InputListener {
+        void input(String input);
+    }
+
     @Override
     public void pause() {
     }
