@@ -1,17 +1,8 @@
 package com.ygame.chain.Server;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * ProjectName: chain_together_Yhr
- * ClassName: GameServer
+ * ClassName: GameClient
  * Package : com.ygame.chain.network
  * Description:
  *
@@ -19,89 +10,42 @@ import java.util.Set;
  * @Create 2024/7/18 17:00
  * @Version 1.0
  */
-public class GameServer implements Runnable {
-    private static final int PORT = 12345;
-    private static Set<ClientHandler> clientHandlers = new HashSet<>();//ConcurrentHashMap.newKeySet();
-    private static int connectedPlayers = 0;
 
-    @Override
-    public void run() {
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            System.out.println("Server started on port " + PORT);
 
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("New client connected");
-                ClientHandler clientHandler = new ClientHandler(clientSocket);
-                clientHandlers.add(clientHandler);
-                new Thread(clientHandler).start();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryonet.Connection;
+import com.esotericsoftware.kryonet.Listener;
+import com.esotericsoftware.kryonet.Server;
+import com.ygame.chain.utils.SharedClasses;
 
-    public static void broadcast(String message) {
-        for (ClientHandler clientHandler : clientHandlers) {
-            clientHandler.sendMessage(message);
-        }
-    }
+import java.io.IOException;
 
-    static class ClientHandler implements Runnable {
-        private Socket socket;
-        private PrintWriter out;
-        private BufferedReader in;
+public class GameServer {
+    private Server server;
 
-        public ClientHandler(Socket socket) {
-            this.socket = socket;
-        }
+    public GameServer() throws IOException {
+        server = new Server();
+        Kryo kryo = server.getKryo();
+        kryo.register(SharedClasses.RegisterName.class);
+        kryo.register(SharedClasses.UpdatePosition.class);
 
-        @Override
-        public void run() {
-            try {
-                out = new PrintWriter(socket.getOutputStream(), true);
-                in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-                String inputLine;
-                while ((inputLine = in.readLine()) != null) {
-                    System.out.println("Received: " + inputLine);
-                    if (inputLine.startsWith("LOGIN")) {
-                        handleLogin(inputLine);
-                    } else if (inputLine.startsWith("MOVE")) {
-                        handleMove(inputLine);
-                    } else if (inputLine.startsWith("START")) {
-                        handleStart(inputLine);
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    socket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+        server.addListener(new Listener() {
+            public void received(Connection connection, Object object) {
+                if (object instanceof SharedClasses.RegisterName) {
+                    SharedClasses.RegisterName registerName = (SharedClasses.RegisterName) object;
+                    System.out.println("Received registration: " + registerName.name);
+                } else if (object instanceof SharedClasses.UpdatePosition) {
+                    SharedClasses.UpdatePosition updatePosition = (SharedClasses.UpdatePosition) object;
+                    System.out.println("Received position update: " + updatePosition.x + ", " + updatePosition.y);
                 }
             }
-        }
+        });
 
-        private void handleLogin(String inputLine) {
-            connectedPlayers++;
-            broadcast("PLAYER_CONNECTED " + connectedPlayers);
-            if (connectedPlayers == 3) {
-                broadcast("ALL_PLAYERS_CONNECTED");
-            }
-        }
+        server.bind(54555, 54777);
+        server.start();
+    }
 
-        private void handleMove(String inputLine) {
-            broadcast(inputLine);
-        }
-
-        private void handleStart(String inputLine) {
-            broadcast("START_GAME");
-        }
-
-        public void sendMessage(String message) {
-            out.println(message);
-        }
+    public static void main(String[] args) throws IOException {
+        new GameServer();
     }
 }

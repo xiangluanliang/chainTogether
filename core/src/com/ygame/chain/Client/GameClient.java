@@ -1,15 +1,5 @@
 package com.ygame.chain.Client;
 
-import com.ygame.chain.screens.LoginScreen;
-import com.ygame.chain.utils.Player;
-
-import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
-
 /**
  * ProjectName: chain_together_Yhr
  * ClassName: GameClient
@@ -21,56 +11,44 @@ import java.net.Socket;
  * @Version 1.0
  */
 
-public class GameClient implements Runnable {
-    private static final String SERVER_ADDRESS = LoginScreen.getServerAddress();
-    private static final int SERVER_PORT = 1234;
-    private Socket socket;
-    private PrintWriter out;
-    private BufferedReader in;
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryonet.Client;
+import com.esotericsoftware.kryonet.Connection;
+import com.esotericsoftware.kryonet.Listener;
+import com.ygame.chain.utils.SharedClasses;
 
-    private Player role;
+import java.io.IOException;
 
-    public GameClient(Player role){
-        this.role = role;
-        this.run();
-    }
+public class GameClient {
+    private Client client;
 
-    @Override
-    public void run() {
-        try {
-            socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
-//            out = new PrintWriter(socket.getOutputStream(), true);
-//            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+    public GameClient(String host) throws IOException {
+        client = new Client();
+        Kryo kryo = client.getKryo();
+        kryo.register(SharedClasses.RegisterName.class);
+        kryo.register(SharedClasses.UpdatePosition.class);
 
-//            new Thread(new ServerListener()).start();
-
-            // Example of login
-            out.println("LOGIN player");
-
-            // Example of sending move
-            // out.println("MOVE player x y");
-
-            // Example of starting game
-            // out.println("START");
-
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "服务器链接失败，请检查网络链接！");
-            e.printStackTrace();
-        }
-    }
-
-    class ServerListener implements Runnable {
-        @Override
-        public void run() {
-            try {
-                String serverMessage;
-                while ((serverMessage = in.readLine()) != null) {
-                    System.out.println("Server: " + serverMessage);
-                    // Handle server messages, e.g., update game state
+        client.addListener(new Listener() {
+            public void received(Connection connection, Object object) {
+                if (object instanceof SharedClasses.UpdatePosition) {
+                    SharedClasses.UpdatePosition updatePosition = (SharedClasses.UpdatePosition) object;
+                    System.out.println("Received position update: " + updatePosition.x + ", " + updatePosition.y);
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-        }
+        });
+
+        client.start();
+        client.connect(5000, host, 54555, 54777);
+
+        // 发送注册消息
+        SharedClasses.RegisterName registerName = new SharedClasses.RegisterName();
+        registerName.name = "Player1";
+        client.sendTCP(registerName);
+
+        // 发送位置更新
+        SharedClasses.UpdatePosition updatePosition = new SharedClasses.UpdatePosition();
+        updatePosition.x = 100;
+        updatePosition.y = 200;
+        client.sendTCP(updatePosition);
     }
 }
