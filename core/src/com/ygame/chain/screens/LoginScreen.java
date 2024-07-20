@@ -33,8 +33,6 @@ public class LoginScreen implements Screen {
     private Texture backgroundTexture;
     private Image backgroundImage1;
     private Image backgroundImage2;
-    private Table loginTable;
-    private Table createRoomTable;
     Game game;
 
     public LoginScreen(Game game) {
@@ -133,15 +131,13 @@ public class LoginScreen implements Screen {
     }
 
     private Table createRoomTable() {
-        ;
-
 
         TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
         TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
         enterRoomButton.setColor(Color.RED);
         createRoomButton.setColor(Color.RED);
 
-        createRoomTable = new Table();
+        Table createRoomTable = new Table();
         createRoomTable.setFillParent(true);
 
         createRoomTable.row();
