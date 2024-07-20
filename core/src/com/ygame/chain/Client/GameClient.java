@@ -1,5 +1,9 @@
 package com.ygame.chain.Client;
 
+import com.ygame.chain.screens.LoginScreen;
+import com.ygame.chain.utils.Player;
+
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,20 +22,27 @@ import java.net.Socket;
  */
 
 public class GameClient implements Runnable {
-    private static final String SERVER_ADDRESS = "localhost";
-    private static final int SERVER_PORT = 12345;
+    private static final String SERVER_ADDRESS = LoginScreen.getServerAddress();
+    private static final int SERVER_PORT = 1234;
     private Socket socket;
     private PrintWriter out;
     private BufferedReader in;
+
+    private Player role;
+
+    public GameClient(Player role){
+        this.role = role;
+        this.run();
+    }
 
     @Override
     public void run() {
         try {
             socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
-            out = new PrintWriter(socket.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//            out = new PrintWriter(socket.getOutputStream(), true);
+//            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            new Thread(new ServerListener()).start();
+//            new Thread(new ServerListener()).start();
 
             // Example of login
             out.println("LOGIN player");
@@ -43,6 +54,7 @@ public class GameClient implements Runnable {
             // out.println("START");
 
         } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "服务器链接失败，请检查网络链接！");
             e.printStackTrace();
         }
     }

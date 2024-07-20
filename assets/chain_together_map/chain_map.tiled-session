@@ -17,12 +17,20 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "level-1.tmx": {
-            "scale": 1.5,
-            "selectedLayer": 2,
+        "level-0.tmx": {
+            "scale": 0.5605989583333333,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 142.66666666666669,
-                "y": 715.6666666666666
+                "x": 959.6878338830306,
+                "y": 559.2233009708738
+            }
+        },
+        "level-1.tmx": {
+            "scale": 0.5,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": 1016,
+                "y": 665
             }
         },
         "tileset.tsx": {

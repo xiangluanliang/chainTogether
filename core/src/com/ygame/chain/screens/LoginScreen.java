@@ -18,6 +18,7 @@ import com.ygame.chain.Client.GameClient;
 
 import javax.swing.*;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 
 /**
@@ -36,6 +37,8 @@ public class LoginScreen implements Screen {
     private Image backgroundImage1;
     private Image backgroundImage2;
     Game game;
+    private static String SERVER_ADDRESS;
+
 
     public LoginScreen(Game game) {
         this.game = game;
@@ -112,6 +115,7 @@ public class LoginScreen implements Screen {
                 String password = passwordField.getText();
                 if (iflogin(userID, password)) {
                     JOptionPane.showMessageDialog(null, "Welcome！", "Message", -1);
+                    addLoginInfo(userID);
                     loginTable.remove();
                     stage.addActor(createRoomTable());
                 } else {
@@ -185,14 +189,16 @@ public class LoginScreen implements Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
 //                new Thread(new GameClient()).start();
-                game.setScreen(new Level1());
+                game.setScreen(new Level0());
             }
         });
 
         exitButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                Gdx.app.exit();
+                createRoomTable.remove();
+                stage.addActor(createLoginTable());
+//                Gdx.app.exit();
             }
         });
 
@@ -232,7 +238,6 @@ public class LoginScreen implements Screen {
         ResultSet resultSet;//存储了从数据库查询返回的结果集
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfor", "root", "orange741216");
-            System.out.println(con.isReadOnly());
             String sql = "SELECT * FROM user WHERE userID=? AND password=?";
             pre = con.prepareStatement(sql);//将SQL查询语句作为参数传入
             pre.setString(1, userID);
@@ -245,6 +250,31 @@ public class LoginScreen implements Screen {
         return false;
     }
 
+    public static void addLoginInfo(String userID){
+        Connection con = null;
+        PreparedStatement pre = null;
+        try {
+            SERVER_ADDRESS = InetAddress.getLocalHost().getHostAddress();
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfor", "root", "orange741216");
+            String sql = "UPDATE user SET ipaddress = ?, lastlogin = ? WHERE userID = ?";
+
+            pre = con.prepareStatement(sql);//将SQL查询语句作为参数传入
+            pre.setString(1,SERVER_ADDRESS);
+            pre.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
+            pre.setString(3, userID);
+            pre.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (pre != null) pre.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     public void actionPerformed(String userID, String password) {
 
         if (userID.isEmpty() || password.isEmpty()) {
@@ -284,6 +314,11 @@ public class LoginScreen implements Screen {
             }
         }
     }
+
+    public static String getServerAddress() {
+        return SERVER_ADDRESS;
+    }
+
 
     @Override
     public void show() {
