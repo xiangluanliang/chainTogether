@@ -7,12 +7,16 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.ygame.chain.Client.GameClient;
+import jdk.javadoc.internal.doclets.formats.html.markup.Text;
+import sun.security.x509.IPAddressName;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -29,6 +33,8 @@ public class LoginScreen implements Screen {
     private Texture backgroundTexture;
     private Image backgroundImage1;
     private Image backgroundImage2;
+    private Table loginTable;
+    private Table createRoomTable;
     Game game;
 
     public LoginScreen(Game game) {
@@ -50,6 +56,12 @@ public class LoginScreen implements Screen {
         stage.addActor(backgroundImage1);
         stage.addActor(backgroundImage2);
 
+        stage.addActor(createLoginTable());
+
+
+    }
+
+    private Table createLoginTable() {
         // 创建标题
         Label titleLabel = new Label("Chain Together", VisUI.getSkin());
         titleLabel.setColor(Color.BLACK);
@@ -74,21 +86,21 @@ public class LoginScreen implements Screen {
         TextButton registerButton = new TextButton("Register", VisUI.getSkin());
 
         // 创建表格布局
-        Table table = new Table();
-        table.setFillParent(true);
-        table.add(titleLabel).colspan(2).center().padBottom(50);
-        table.row();
-        table.add(idText).left();
-        table.add(idField).fillX().uniformX().padBottom(10);
-        table.row();
-        table.add(passwordText).left();
-        table.add(passwordField).fillX().uniformX().padBottom(20);
-        table.row();
-        table.add(loginButton).colspan(2).center().padBottom(10);
-        table.row();
-        table.add(registerButton).colspan(2).center();
+        Table loginTable = new Table();
+        loginTable.setFillParent(true);
+        loginTable.add(titleLabel).colspan(2).center().padBottom(50);
 
-        stage.addActor(table);
+        loginTable.row();
+        loginTable.add(idText).left();
+        loginTable.add(idField).fillX().uniformX().padBottom(10);
+
+        loginTable.row();
+        loginTable.add(passwordText).left();
+        loginTable.add(passwordField).fillX().uniformX().padBottom(20);
+
+        loginTable.row();
+        loginTable.add(loginButton).center();
+        loginTable.add(registerButton).center();
 
         loginButton.addListener(new ChangeListener() {
             @Override
@@ -98,9 +110,11 @@ public class LoginScreen implements Screen {
 //                Gdx.app.log("aaaa","aaa");
                 // Send login request to server
 
-                new Thread(new GameClient()).start();
+//                new Thread(new GameClient()).start();
 
 //                game.setScreen(new Level1());
+                loginTable.remove();
+                stage.addActor(createRoomTable());
             }
         });
 
@@ -113,10 +127,81 @@ public class LoginScreen implements Screen {
 
             }
         });
+
+        return loginTable;
+
+    }
+
+    private Table createRoomTable() {
+        ;
+
+
+        TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
+        TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
+        enterRoomButton.setColor(Color.RED);
+        createRoomButton.setColor(Color.RED);
+
+        createRoomTable = new Table();
+        createRoomTable.setFillParent(true);
+
+        createRoomTable.row();
+        createRoomTable.add(createRoomButton).center().uniform().padBottom(50);
+
+        createRoomTable.row();
+        createRoomTable.add(enterRoomButton).center().uniform().padBottom(50);
+
+        enterRoomButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                // 显示输入对话框
+                showInputDialog("Enter Something:", new InputListener() {
+                    @Override
+                    public void input(String input) {
+                        System.out.println(input);
+//                        Gdx.app.log("LoginScreen", "Input received: " + input);
+//                        // 在这里处理输入逻辑
+                    }
+                });
+            }
+        });
+
+
+        createRoomButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                game.setScreen(new Level1());
+            }
+        });
+
+        return createRoomTable;
+    }
+
+    private void showInputDialog(String message, final InputListener listener) {
+        final TextField textField = new TextField("", VisUI.getSkin());
+        final Dialog dialog = new Dialog("Input", VisUI.getSkin()) {
+            @Override
+            protected void result(Object object) {
+                if (object.equals(true)) {
+                    listener.input(textField.getText());
+                }
+            }
+        };
+        dialog.text(message);
+
+
+        dialog.getContentTable().row();
+        dialog.getContentTable().add(textField).width(200);
+
+        dialog.button("OK", true);
+        dialog.button("Cancel", false);
+
+        dialog.show(stage);
+
     }
 
     @Override
-    public void show() {}
+    public void show() {
+    }
 
     @Override
     public void render(float delta) {
@@ -147,14 +232,20 @@ public class LoginScreen implements Screen {
         backgroundImage2.setSize(width, height);
     }
 
+        public interface InputListener {
+            void input(String input);
+        }
     @Override
-    public void pause() {}
+    public void pause() {
+    }
 
     @Override
-    public void resume() {}
+    public void resume() {
+    }
 
     @Override
-    public void hide() {}
+    public void hide() {
+    }
 
     @Override
     public void dispose() {

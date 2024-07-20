@@ -3,6 +3,10 @@ package com.ygame.chain;
 import com.badlogic.gdx.Game;
 import com.ygame.chain.screens.LoginScreen;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+
 public class ChainTogether extends Game {
 
     @Override
