@@ -22,6 +22,7 @@ import static com.ygame.chain.utils.ConstPool.PPM;
  */
 
 public class Player {
+    private Texture img;
     private final TextureRegion role;
     private final Body roleBody;
 
@@ -33,7 +34,7 @@ public class Player {
 
 
     public Player(String path, World world, float bornPositionX, float bornPositionY) {
-        Texture img = new Texture(path);
+        img = new Texture(path);
         Width = img.getWidth();
         Height = img.getHeight();
         role = new TextureRegion(img, Width, Height);
@@ -68,6 +69,11 @@ public class Player {
         return roleBody.getPosition();
     }
 
+    public void setPosition(float x, float y) {
+        roleBody.getPosition().x = x;
+        roleBody.getPosition().y = y;
+    }
+
     public float getHeight() {
         return Height;
     }
@@ -90,6 +96,10 @@ public class Player {
             roleBody.applyLinearImpulse(new Vector2(x, y), roleBody.getWorldCenter(), true);
             isJump = true;
         }
+    }
+
+    public void setTexture(String texturePath) {
+        img = new Texture(texturePath);
     }
 
     public void render(SpriteBatch batch) {

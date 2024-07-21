@@ -61,7 +61,7 @@ public class LoginScreen implements Screen {
 
     }
 
-    public static void addLoginInfo(String userID){
+    public static void addLoginInfo(String userID) {
         Connection con = null;
         PreparedStatement pre = null;
         try {
@@ -76,7 +76,7 @@ public class LoginScreen implements Screen {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 if (pre != null) pre.close();
                 if (con != null) con.close();
@@ -218,11 +218,13 @@ public class LoginScreen implements Screen {
     }
 
     private Table createRoomTable() {
+
         try {
-            gameClient = new GameClient(GameUtil.getServerAddress());
+            gameClient = new GameClient(game, GameUtil.getServerAddress());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
 
         TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
         TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
@@ -243,48 +245,47 @@ public class LoginScreen implements Screen {
         createRoomTable.row();
         createRoomTable.add(exitButton).center().uniform().padBottom(50);
 
-        enterRoomButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                // 显示输入对话框
-                showInputDialog("Enter RoomCode:", new InputListener() {
-                    @Override
-                    public void input(String input) {
-//                        System.out.println(exitRoomCode);
-                        System.out.println(input);
-                        System.out.println(SharedClasses.RoomCode.roomCode);
-                        System.out.println(input.equals(SharedClasses.RoomCode.roomCode));
-                        game.setScreen(new Level0());
-//                        Gdx.app.log("LoginScreen", "Input received: " + input);
-//                        // 在这里处理输入逻辑
-                    }
-                });
-            }
-        });
-
-
         createRoomButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                String roomCode = GameUtil.generateRoomNumber();
-                SharedClasses.RoomCode.roomCode = roomCode;
-                System.out.println(SharedClasses.RoomCode.roomCode);
-//                new Thread(new GameClient()).start();
-                game.setScreen(new Level0(roomCode));
+                String roomCode = GameUtil.generateRoomNumber(); // 生成房间码
+                try {
+                    gameClient.createRoom(roomCode);
+                    System.out.println("Generated Room Code: " + roomCode);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        enterRoomButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                showInputDialog("Enter RoomCode:", new InputListener() {
+                    @Override
+                    public void input(String input) {
+                        try {
+                            gameClient.joinRoom(input);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
         });
 
         exitButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                gameClient.close();
                 createRoomTable.remove();
+                gameClient.closeClient();
                 stage.addActor(createLoginTable());
             }
         });
 
         return createRoomTable;
     }
+
     public void actionPerformed(String userID, String password) {
 
         if (userID.isEmpty() || password.isEmpty()) {

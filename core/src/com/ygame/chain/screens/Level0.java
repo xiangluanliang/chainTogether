@@ -17,7 +17,11 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.ygame.chain.utils.GameMapGenerator;
 import com.ygame.chain.utils.Player;
+import com.ygame.chain.utils.SharedClasses;
 import com.ygame.chain.utils.SmoothCamera;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -31,6 +35,7 @@ import com.ygame.chain.utils.SmoothCamera;
  */
 public class Level0 implements Screen {
     private SpriteBatch batch;
+    private Map<String, Player> players;
     private static Player redBall;
     private static Player greenBall;
     private static Player purpleBall;
@@ -42,12 +47,19 @@ public class Level0 implements Screen {
     GameMapGenerator mapGenerator;
     private Stage stage;
 
-    public Level0(){
+    public Level0(Map<String, SharedClasses.PlayerState> initialStates) {
+        this();
+        for (Map.Entry<String, SharedClasses.PlayerState> entry : initialStates.entrySet()) {
+            addPlayer(entry.getKey(), entry.getValue());
+        }
+    }
+
+    public Level0() {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
+        players = new HashMap<>();
 
-        redBall = greenBall = purpleBall = null;
 //         创建相机
         float forceLength = 100f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
 
@@ -131,8 +143,9 @@ public class Level0 implements Screen {
         batch.setProjectionMatrix(smoothCamera.combined);
 
         batch.begin();
-        greenBall.render(batch);
-//        purpleBall.render(batch);
+        for (Player player : players.values()) {
+            player.render(batch);
+        }
         batch.end();
 
         stage.act(Gdx.graphics.getDeltaTime());
@@ -147,6 +160,35 @@ public class Level0 implements Screen {
         world.step(1 / 60f, 6, 2);
     }
 
+    private void addPlayer(String playerId, SharedClasses.PlayerState state) {
+        Player player = null;
+        switch (state.type) {
+            case GREEN:
+                player = new Player("./ball/smallGreenBall.png", world, state.x, state.y);
+                break;
+            case PURPLE:
+                player = new Player("./ball/smallPurpleBall.png", world, state.x, state.y);
+                break;
+            case RED:
+                player = new Player("./ball/smallRedBall.png", world, state.x, state.y);
+                break;
+        }
+        if (player != null) {
+            players.put(playerId, player);
+        }
+    }
+
+    public void updatePlayerStates(Map<String, SharedClasses.PlayerState> states) {
+        for (Map.Entry<String, SharedClasses.PlayerState> entry : states.entrySet()) {
+            Player player = players.get(entry.getKey());
+            if (player == null) {
+                addPlayer(entry.getKey(), entry.getValue());
+            } else {
+                player.setPosition(entry.getValue().x, entry.getValue().y);
+            }
+        }
+    }
+
     private void handleInput() {
         if (Gdx.input.isKeyPressed(Input.Keys.D))
             greenBall.move(0.1f, 0);
@@ -155,6 +197,7 @@ public class Level0 implements Screen {
         if (Gdx.input.isKeyPressed(Input.Keys.W))
             greenBall.jump(0, 6);
     }
+
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);

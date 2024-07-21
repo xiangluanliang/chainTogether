@@ -2,6 +2,8 @@ package com.ygame.chain.utils;
 
 import com.badlogic.gdx.math.Vector2;
 
+import java.util.Map;
+
 /**
  * ProjectName: chain_together_Yhr
  * ClassName: SharedClass
@@ -22,7 +24,30 @@ public class SharedClasses {
         public Vector2 vec;
     }
 
-    public static class RoomCode {
-        public static String roomCode;
+    public enum PlayerType {
+        GREEN,
+        PURPLE,
+        RED
+    }
+
+    public static class PlayerState {
+        public int x, y; // 示例玩家位置
+        public PlayerType type;
+    }
+
+    public static class RoomJoinRequest {
+        public String roomCode;
+    }
+
+    public static class RoomJoinResponse {
+        public Map<String, PlayerState> playerStates;
+
+        public RoomJoinResponse() {
+
+        }
+
+        public RoomJoinResponse(Map<String, PlayerState> playerStates) {
+            this.playerStates = playerStates;
+        }
     }
 }

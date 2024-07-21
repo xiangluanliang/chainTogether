@@ -1,69 +1,62 @@
 package com.ygame.chain.Client;
 
-/**
- * ProjectName: chain_together_Yhr
- * ClassName: GameClient
- * Package : com.ygame.chain.network
- * Description:
- *
- * @Author Lxl
- * @Create 2024/7/18 17:00
- * @Version 1.0
- */
-
-import com.esotericsoftware.kryo.Kryo;
+import com.badlogic.gdx.Game;
 import com.esotericsoftware.kryonet.Client;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
+import com.ygame.chain.screens.Level0;
+import com.ygame.chain.utils.GameUtil;
 import com.ygame.chain.utils.SharedClasses;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GameClient {
     private Client client;
+    private Game game;
+    private Level0 level0;
 
-    public GameClient(String host) throws IOException {
+    public GameClient(Game game, String host) throws IOException {
+        this.game = game;
         client = new Client();
-        Kryo kryo = client.getKryo();
-        kryo.register(SharedClasses.RegisterName.class);
-        kryo.register(SharedClasses.UpdatePosition.class);
-        kryo.register(SharedClasses.RoomCode.class);
+        GameUtil.KryoHelper.registerClasses(client.getKryo());
 
         client.addListener(new Listener() {
+            @Override
             public void received(Connection connection, Object object) {
-                if (object instanceof SharedClasses.RegisterName) {
-                    sendRoomCode();
-                    SharedClasses.RegisterName registerName = (SharedClasses.RegisterName) object;
-                    System.out.println(registerName);
-                } else if (object instanceof SharedClasses.UpdatePosition) {
-                    SharedClasses.UpdatePosition updatePosition = (SharedClasses.UpdatePosition) object;
-                } else if (object instanceof String) {
-                    String roomCode = (String) object;
-                    System.out.println(roomCode);
-                    SharedClasses.RoomCode.roomCode = roomCode;
+                if (object instanceof SharedClasses.RoomJoinResponse) {
+                    SharedClasses.RoomJoinResponse response = (SharedClasses.RoomJoinResponse) object;
+                    level0 = new Level0(response.playerStates);
+                    game.setScreen(level0);
+                } else if (object instanceof HashMap) {
+                    Map<String, SharedClasses.PlayerState> states = (Map<String, SharedClasses.PlayerState>) object;
+                    level0.updatePlayerStates(states);
                 }
             }
         });
 
         client.start();
         client.connect(5000, host, 54555, 54777);
-
-        // 发送注册消息
-        SharedClasses.RegisterName registerName = new SharedClasses.RegisterName();
-        registerName.name = "Player1";
-
-//        // 发送位置更新
-//        SharedClasses.UpdatePosition updatePosition = new SharedClasses.UpdatePosition();
-//        client.sendTCP(updatePosition);
-
     }
 
-    public void sendRoomCode() {
-        client.sendTCP(new SharedClasses.RoomCode());
+    public void createRoom(String roomCode) {
+        SharedClasses.RoomJoinRequest request = new SharedClasses.RoomJoinRequest();
+        request.roomCode = roomCode;
+        client.sendTCP(request);
     }
 
-    public void close() {
+    public void joinRoom(String roomCode) {
+        SharedClasses.RoomJoinRequest request = new SharedClasses.RoomJoinRequest();
+        request.roomCode = roomCode;
+        client.sendTCP(request);
+    }
+
+    public void updateState(SharedClasses.PlayerState state) {
+        client.sendTCP(state);
+    }
+
+    public void closeClient() {
         client.close();
     }
-
 }
