@@ -65,7 +65,7 @@ public class GameServer {
 
 class Room {
     private String roomCode;
-    private Map<String, SharedClasses.PlayerState> players;
+    private Map<Connection, SharedClasses.PlayerState> players;
 
     public Room() {
 
