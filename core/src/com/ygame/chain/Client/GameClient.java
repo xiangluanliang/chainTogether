@@ -27,12 +27,20 @@ public class GameClient {
         Kryo kryo = client.getKryo();
         kryo.register(SharedClasses.RegisterName.class);
         kryo.register(SharedClasses.UpdatePosition.class);
+        kryo.register(SharedClasses.RoomCode.class);
 
         client.addListener(new Listener() {
             public void received(Connection connection, Object object) {
-                if (object instanceof SharedClasses.UpdatePosition) {
+                if (object instanceof SharedClasses.RegisterName) {
+                    sendRoomCode();
+                    SharedClasses.RegisterName registerName = (SharedClasses.RegisterName) object;
+                    System.out.println(registerName);
+                } else if (object instanceof SharedClasses.UpdatePosition) {
                     SharedClasses.UpdatePosition updatePosition = (SharedClasses.UpdatePosition) object;
-                    System.out.println("Received position update: " + updatePosition.x + ", " + updatePosition.y);
+                } else if (object instanceof String) {
+                    String roomCode = (String) object;
+                    System.out.println(roomCode);
+                    SharedClasses.RoomCode.roomCode = roomCode;
                 }
             }
         });
@@ -43,12 +51,19 @@ public class GameClient {
         // 发送注册消息
         SharedClasses.RegisterName registerName = new SharedClasses.RegisterName();
         registerName.name = "Player1";
-        client.sendTCP(registerName);
 
-        // 发送位置更新
-        SharedClasses.UpdatePosition updatePosition = new SharedClasses.UpdatePosition();
-        updatePosition.x = 100;
-        updatePosition.y = 200;
-        client.sendTCP(updatePosition);
+//        // 发送位置更新
+//        SharedClasses.UpdatePosition updatePosition = new SharedClasses.UpdatePosition();
+//        client.sendTCP(updatePosition);
+
     }
+
+    public void sendRoomCode() {
+        client.sendTCP(new SharedClasses.RoomCode());
+    }
+
+    public void close() {
+        client.close();
+    }
+
 }

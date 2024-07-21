@@ -9,7 +9,6 @@ public class ChainTogether extends Game {
     public void create() {
         setScreen(new LoginScreen(this));
 //        setScreen(new Level0());
-//        System.out.println(new Timestamp(System.currentTimeMillis()));
     }
 
     @Override

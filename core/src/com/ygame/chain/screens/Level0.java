@@ -3,19 +3,21 @@ package com.ygame.chain.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.ygame.chain.Client.GameClient;
+import com.kotcrab.vis.ui.VisUI;
 import com.ygame.chain.utils.GameMapGenerator;
 import com.ygame.chain.utils.Player;
 import com.ygame.chain.utils.SmoothCamera;
-
-import java.io.IOException;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -29,9 +31,9 @@ import java.io.IOException;
  */
 public class Level0 implements Screen {
     private SpriteBatch batch;
-    private Player redBall;
-    private Player greenBall;
-    private Player purpleBall;
+    private static Player redBall;
+    private static Player greenBall;
+    private static Player purpleBall;
     private SmoothCamera smoothCamera;
 
     private World world;
@@ -45,6 +47,7 @@ public class Level0 implements Screen {
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
 
+        redBall = greenBall = purpleBall = null;
 //         创建相机
         float forceLength = 100f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
 
@@ -66,20 +69,48 @@ public class Level0 implements Screen {
 
         mapGenerator.createGround();
 
-
-        // 创建角色
-        // 有且仅有三个
-
-        redBall = new Player("./ball/smallRedBall.png", world, 1, 2);
-
-        try {
-            new GameClient(LoginScreen.getServerAddress());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (greenBall == null) {
+            greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
+        } else if (purpleBall == null) {
+            purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
         }
 
-//        greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
-//        purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
+
+//        VisUI.load(VisUI.SkinScale.X2);
+//        Skin skin = VisUI.getSkin();
+//
+//        // 创建标签控件
+//        Label roomNumberLabel = new Label("Room: " + GameUtil.generateRoomNumber(), skin);
+//        roomNumberLabel.setColor(Color.BLACK);
+//        roomNumberLabel.setFontScale(2f);
+//
+//        // 创建一个Table来布局控件
+//        Table table = new Table();
+//        table.top().right();
+//        table.setFillParent(true);
+//        table.add(roomNumberLabel).pad(100);
+//
+//        // 添加Table到Stage
+//        stage.addActor(table);
+    }
+
+    public Level0(String roomCode) {
+        this();
+        Skin skin = VisUI.getSkin();
+
+        // 创建标签控件
+        Label roomNumberLabel = new Label("Room: " + roomCode, skin);
+        roomNumberLabel.setColor(Color.BLACK);
+        roomNumberLabel.setFontScale(2f);
+
+        // 创建一个Table来布局控件
+        Table table = new Table();
+        table.top().right();
+        table.setFillParent(true);
+        table.add(roomNumberLabel).pad(100);
+
+        // 添加Table到Stage
+        stage.addActor(table);
     }
 
     @Override
@@ -98,11 +129,14 @@ public class Level0 implements Screen {
 
         // 将绘制与相机投影绑定
         batch.setProjectionMatrix(smoothCamera.combined);
+
         batch.begin();
-        redBall.render(batch);
-//        greenBall.render(batch);
+        greenBall.render(batch);
 //        purpleBall.render(batch);
         batch.end();
+
+        stage.act(Gdx.graphics.getDeltaTime());
+        stage.draw();
 
         handleInput();
 
@@ -115,11 +149,11 @@ public class Level0 implements Screen {
 
     private void handleInput() {
         if (Gdx.input.isKeyPressed(Input.Keys.D))
-            redBall.move(0.1f, 0);
+            greenBall.move(0.1f, 0);
         if (Gdx.input.isKeyPressed(Input.Keys.A))
-            redBall.move(-0.1f, 0);
+            greenBall.move(-0.1f, 0);
         if (Gdx.input.isKeyPressed(Input.Keys.W))
-            redBall.jump(0, 6);
+            greenBall.jump(0, 6);
     }
     @Override
     public void resize(int width, int height) {

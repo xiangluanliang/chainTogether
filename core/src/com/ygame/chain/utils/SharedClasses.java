@@ -1,5 +1,7 @@
 package com.ygame.chain.utils;
 
+import com.badlogic.gdx.math.Vector2;
+
 /**
  * ProjectName: chain_together_Yhr
  * ClassName: SharedClass
@@ -11,11 +13,16 @@ package com.ygame.chain.utils;
  * @Version 1.0
  */
 public class SharedClasses {
+
     public static class RegisterName {
-        public String name;
+        public static String name;
     }
 
     public static class UpdatePosition {
-        public float x, y;
+        public Vector2 vec;
+    }
+
+    public static class RoomCode {
+        public static String roomCode;
     }
 }

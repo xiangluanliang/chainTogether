@@ -7,18 +7,17 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.ygame.chain.Client.GameClient;
-
+import com.ygame.chain.utils.GameUtil;
+import com.ygame.chain.utils.SharedClasses;
 
 import javax.swing.*;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.io.IOException;
 import java.sql.*;
 
 /**
@@ -37,8 +36,7 @@ public class LoginScreen implements Screen {
     private Image backgroundImage1;
     private Image backgroundImage2;
     Game game;
-    private static String SERVER_ADDRESS;
-
+    public GameClient gameClient;
 
     public LoginScreen(Game game) {
         this.game = game;
@@ -61,6 +59,31 @@ public class LoginScreen implements Screen {
 
         stage.addActor(createLoginTable());
 
+    }
+
+    public static void addLoginInfo(String userID){
+        Connection con = null;
+        PreparedStatement pre = null;
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfor", "root", "orange741216");
+            String sql = "UPDATE user SET ipaddress = ?, lastlogin = ? WHERE userID = ?";
+
+            pre = con.prepareStatement(sql);//将SQL查询语句作为参数传入
+            pre.setString(1, GameUtil.getServerAddress());
+            pre.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
+            pre.setString(3, userID);
+            pre.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (pre != null) pre.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private Table createLoginTable() {
@@ -116,6 +139,7 @@ public class LoginScreen implements Screen {
                 if (iflogin(userID, password)) {
                     JOptionPane.showMessageDialog(null, "Welcome！", "Message", -1);
                     addLoginInfo(userID);
+                    SharedClasses.RegisterName.name = userID;
                     loginTable.remove();
                     stage.addActor(createRoomTable());
                 } else {
@@ -146,63 +170,6 @@ public class LoginScreen implements Screen {
 
         return loginTable;
 
-    }
-
-    private Table createRoomTable() {
-
-        TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
-        TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
-        TextButton exitButton = new TextButton("Exit", VisUI.getSkin());
-        enterRoomButton.setColor(Color.RED);
-        createRoomButton.setColor(Color.RED);
-        exitButton.setColor(Color.RED);
-
-        Table createRoomTable = new Table();
-        createRoomTable.setFillParent(true);
-
-        createRoomTable.row();
-        createRoomTable.add(createRoomButton).center().uniform().padBottom(50);
-
-        createRoomTable.row();
-        createRoomTable.add(enterRoomButton).center().uniform().padBottom(50);
-
-        createRoomTable.row();
-        createRoomTable.add(exitButton).center().uniform().padBottom(50);
-
-        enterRoomButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                // 显示输入对话框
-                showInputDialog("Enter Something:", new InputListener() {
-                    @Override
-                    public void input(String input) {
-                        System.out.println(input);
-//                        Gdx.app.log("LoginScreen", "Input received: " + input);
-//                        // 在这里处理输入逻辑
-                    }
-                });
-            }
-        });
-
-
-        createRoomButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-//                new Thread(new GameClient()).start();
-                game.setScreen(new Level0());
-            }
-        });
-
-        exitButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                createRoomTable.remove();
-                stage.addActor(createLoginTable());
-//                Gdx.app.exit();
-            }
-        });
-
-        return createRoomTable;
     }
 
     private void showInputDialog(String message, final InputListener listener) {
@@ -250,30 +217,73 @@ public class LoginScreen implements Screen {
         return false;
     }
 
-    public static void addLoginInfo(String userID){
-        Connection con = null;
-        PreparedStatement pre = null;
+    private Table createRoomTable() {
         try {
-            SERVER_ADDRESS = InetAddress.getLocalHost().getHostAddress();
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfor", "root", "orange741216");
-            String sql = "UPDATE user SET ipaddress = ?, lastlogin = ? WHERE userID = ?";
-
-            pre = con.prepareStatement(sql);//将SQL查询语句作为参数传入
-            pre.setString(1,SERVER_ADDRESS);
-            pre.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
-            pre.setString(3, userID);
-            pre.executeUpdate();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if (pre != null) pre.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            gameClient = new GameClient(GameUtil.getServerAddress());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
+        TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
+        TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
+        TextButton exitButton = new TextButton("Exit", VisUI.getSkin());
+        enterRoomButton.setColor(Color.RED);
+        createRoomButton.setColor(Color.RED);
+        exitButton.setColor(Color.RED);
+
+        Table createRoomTable = new Table();
+        createRoomTable.setFillParent(true);
+
+        createRoomTable.row();
+        createRoomTable.add(createRoomButton).center().uniform().padBottom(50);
+
+        createRoomTable.row();
+        createRoomTable.add(enterRoomButton).center().uniform().padBottom(50);
+
+        createRoomTable.row();
+        createRoomTable.add(exitButton).center().uniform().padBottom(50);
+
+        enterRoomButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                // 显示输入对话框
+                showInputDialog("Enter RoomCode:", new InputListener() {
+                    @Override
+                    public void input(String input) {
+//                        System.out.println(exitRoomCode);
+                        System.out.println(input);
+                        System.out.println(SharedClasses.RoomCode.roomCode);
+                        System.out.println(input.equals(SharedClasses.RoomCode.roomCode));
+                        game.setScreen(new Level0());
+//                        Gdx.app.log("LoginScreen", "Input received: " + input);
+//                        // 在这里处理输入逻辑
+                    }
+                });
+            }
+        });
+
+
+        createRoomButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                String roomCode = GameUtil.generateRoomNumber();
+                SharedClasses.RoomCode.roomCode = roomCode;
+                System.out.println(SharedClasses.RoomCode.roomCode);
+//                new Thread(new GameClient()).start();
+                game.setScreen(new Level0(roomCode));
+            }
+        });
+
+        exitButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                gameClient.close();
+                createRoomTable.remove();
+                stage.addActor(createLoginTable());
+            }
+        });
+
+        return createRoomTable;
     }
     public void actionPerformed(String userID, String password) {
 
@@ -313,10 +323,6 @@ public class LoginScreen implements Screen {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static String getServerAddress() {
-        return SERVER_ADDRESS;
     }
 
 
