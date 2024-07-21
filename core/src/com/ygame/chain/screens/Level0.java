@@ -17,7 +17,6 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.ygame.chain.utils.GameMapGenerator;
 import com.ygame.chain.utils.Player;
-import com.ygame.chain.utils.SharedClasses;
 import com.ygame.chain.utils.SmoothCamera;
 
 import java.util.HashMap;
@@ -36,6 +35,7 @@ import java.util.Map;
 public class Level0 implements Screen {
     private SpriteBatch batch;
     private Map<String, Player> players;
+    private Player controlledPlayer;
     private static Player redBall;
     private static Player greenBall;
     private static Player purpleBall;
@@ -47,18 +47,11 @@ public class Level0 implements Screen {
     GameMapGenerator mapGenerator;
     private Stage stage;
 
-    public Level0(Map<String, SharedClasses.PlayerState> initialStates) {
-        this();
-        for (Map.Entry<String, SharedClasses.PlayerState> entry : initialStates.entrySet()) {
-            addPlayer(entry.getKey(), entry.getValue());
-        }
-    }
 
-    public Level0() {
+    public Level0(String userID, String texturePath) {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
-        players = new HashMap<>();
 
 //         创建相机
         float forceLength = 100f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
@@ -81,33 +74,16 @@ public class Level0 implements Screen {
 
         mapGenerator.createGround();
 
-        if (greenBall == null) {
-            greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
-        } else if (purpleBall == null) {
-            purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
-        }
+        players = new HashMap<>();
+        // Initialize the controlled player
+        controlledPlayer = new Player(texturePath, world, 5.1f, 5.1f);
+        players.put(userID, controlledPlayer);
 
 
-//        VisUI.load(VisUI.SkinScale.X2);
-//        Skin skin = VisUI.getSkin();
-//
-//        // 创建标签控件
-//        Label roomNumberLabel = new Label("Room: " + GameUtil.generateRoomNumber(), skin);
-//        roomNumberLabel.setColor(Color.BLACK);
-//        roomNumberLabel.setFontScale(2f);
-//
-//        // 创建一个Table来布局控件
-//        Table table = new Table();
-//        table.top().right();
-//        table.setFillParent(true);
-//        table.add(roomNumberLabel).pad(100);
-//
-//        // 添加Table到Stage
-//        stage.addActor(table);
     }
 
-    public Level0(String roomCode) {
-        this();
+    public Level0(String userID, String texturePath, String roomCode) {
+        this(userID, texturePath);
         Skin skin = VisUI.getSkin();
 
         // 创建标签控件
@@ -160,32 +136,15 @@ public class Level0 implements Screen {
         world.step(1 / 60f, 6, 2);
     }
 
-    private void addPlayer(String playerId, SharedClasses.PlayerState state) {
-        Player player = null;
-        switch (state.type) {
-            case GREEN:
-                player = new Player("./ball/smallGreenBall.png", world, state.x, state.y);
-                break;
-            case PURPLE:
-                player = new Player("./ball/smallPurpleBall.png", world, state.x, state.y);
-                break;
-            case RED:
-                player = new Player("./ball/smallRedBall.png", world, state.x, state.y);
-                break;
-        }
-        if (player != null) {
-            players.put(playerId, player);
-        }
+    public void addPlayer(String userID, String texturePath) {
+        Player player = new Player(texturePath, world, 5.1f, 5.1f);
+        players.put(userID, player);
     }
 
-    public void updatePlayerStates(Map<String, SharedClasses.PlayerState> states) {
-        for (Map.Entry<String, SharedClasses.PlayerState> entry : states.entrySet()) {
-            Player player = players.get(entry.getKey());
-            if (player == null) {
-                addPlayer(entry.getKey(), entry.getValue());
-            } else {
-                player.setPosition(entry.getValue().x, entry.getValue().y);
-            }
+    public void updatePlayerPosition(String userID, Vector2 position) {
+        Player player = players.get(userID);
+        if (player != null) {
+            player.setPosition(position.x, position.y);
         }
     }
 

@@ -1,10 +1,10 @@
 package com.ygame.chain.utils;
 
+import com.badlogic.gdx.math.Vector2;
 import com.esotericsoftware.kryo.Kryo;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -30,12 +30,10 @@ public class GameUtil {
 
     public static class KryoHelper {
         public static void registerClasses(Kryo kryo) {
-            kryo.register(SharedClasses.PlayerState.class);
-            kryo.register(SharedClasses.PlayerType.class);
-            kryo.register(SharedClasses.RoomJoinRequest.class);
-            kryo.register(SharedClasses.RoomJoinResponse.class);
-            kryo.register(HashMap.class);
-            kryo.register(SharedClasses.PlayerState[].class);
+            kryo.register(SharedClasses.JoinRequest.class);
+            kryo.register(SharedClasses.JoinResponse.class);
+            kryo.register(SharedClasses.PlayerMove.class);
+            kryo.register(Vector2.class);
         }
     }
 }
