@@ -1,69 +1,51 @@
 package com.ygame.chain.utils;
 
-import com.badlogic.gdx.math.Vector2;
-
 import java.io.Serializable;
-
-/**
- * ProjectName: chain_together_Yhr
- * ClassName: SharedClass
- * Package : com.ygame.chain.utils
- * Description:
- *
- * @Author Lxl
- * @Create 2024/7/20 23:35
- * @Version 1.0
- */
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class SharedClasses {
-    public static class JoinRequest implements Serializable {
-        public String userID;
 
-        public JoinRequest() {
+    public static HashMap<String, PlayerState> playerMap;
+    public static PlayerState red;
+    public static PlayerState green;
+    public static PlayerState purple;
+    public SharedClasses() {
+        playerMap = new HashMap<>();
+        red = new PlayerState("red");
+        green = new PlayerState("green");
+        purple = new PlayerState("purple");
+        playerMap.put("red", red);
+        playerMap.put("green", green);
+        playerMap.put("purple", purple);
+        System.out.println("shared successful");
+        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
+            System.out.println(player.getKey() + ":" + player.getValue());
         }
+        System.out.println("111");
+    }
 
-        public JoinRequest(String userID) {
+    public static class PlayerState implements Serializable {
+        public String userID;
+        public float x, y;
+
+        public PlayerState(String userID) {
             this.userID = userID;
         }
-    }
 
-    public static class JoinResponse implements Serializable {
-        public int playerOrder;
-        public String texturePath;
-
-        public JoinResponse() {
+        public void update(float x, float y) {
+            this.x = x;
+            this.y = y;
         }
 
-        public JoinResponse(int playerOrder, String texturePath) {
-            this.playerOrder = playerOrder;
-            this.texturePath = texturePath;
-        }
-    }
-
-    public static class PlayerMove implements Serializable {
-        public String userID;
-        public Vector2 position;
-
-        public PlayerMove() {
+        public float getX() {
+            return x;
         }
 
-        public PlayerMove(String userID, Vector2 position) {
-            this.userID = userID;
-            this.position = position;
+        public float getY() {
+            return y;
         }
     }
-
-//    public static class RoomCode{
-//        public String roomCode;
-//
-//        public RoomCode(){
-//
-//        }
-//
-//        public RoomCode(String roomCode){
-//            this.roomCode = roomCode;
-//        }
-//
-//    }
 }
+
+

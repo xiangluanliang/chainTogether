@@ -18,11 +18,11 @@
             "scaleInEditor": 1
         },
         "level-0.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "scale": 0.25,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1648.4848484848487,
-                "y": 1092.4242424242425
+                "x": 1436,
+                "y": 990
             }
         },
         "level-1.tmx": {

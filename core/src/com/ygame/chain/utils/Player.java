@@ -69,11 +69,6 @@ public class Player {
         return roleBody.getPosition();
     }
 
-    public void setPosition(float x, float y) {
-        roleBody.getPosition().x = x;
-        roleBody.getPosition().y = y;
-    }
-
     public float getHeight() {
         return Height;
     }
@@ -97,11 +92,6 @@ public class Player {
             isJump = true;
         }
     }
-
-    public void setTexture(String texturePath) {
-        img = new Texture(texturePath);
-    }
-
     public void render(SpriteBatch batch) {
         sprite = new Sprite(role);
 
@@ -113,6 +103,21 @@ public class Player {
         sprite.setRotation(roleBody.getAngle() * MathUtils.radiansToDegrees);
         sprite.setScale(1 / PPM);
         sprite.draw(batch);
+    }
+
+    public void updatePosition(float x, float y) {
+        if (roleBody != null) {
+            roleBody.getPosition().x = x;
+            roleBody.getPosition().y = y;
+        }
+    }
+
+    public float getPosX() {
+        return roleBody.getPosition().x;
+    }
+
+    public float getPosY() {
+        return roleBody.getPosition().y;
     }
 }
 

@@ -3,6 +3,7 @@ package com.ygame.chain.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -15,8 +16,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
+import com.ygame.chain.Client.GameClient;
 import com.ygame.chain.utils.GameMapGenerator;
 import com.ygame.chain.utils.Player;
+import com.ygame.chain.utils.SharedClasses;
 import com.ygame.chain.utils.SmoothCamera;
 
 import java.util.HashMap;
@@ -35,10 +38,8 @@ import java.util.Map;
 public class Level0 implements Screen {
     private SpriteBatch batch;
     private Map<String, Player> players;
+
     private Player controlledPlayer;
-    private static Player redBall;
-    private static Player greenBall;
-    private static Player purpleBall;
     private SmoothCamera smoothCamera;
 
     private World world;
@@ -46,12 +47,18 @@ public class Level0 implements Screen {
 
     GameMapGenerator mapGenerator;
     private Stage stage;
+    String userID;
+    Map<String, SharedClasses.PlayerState> playerMap;
+    private GameClient gameClient;
+    private Music rainMusic;
 
 
-    public Level0(String userID, String texturePath) {
+    public Level0(String userID, GameClient gameClient) {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
+        this.gameClient = gameClient;
+        this.userID = userID;
 
 //         创建相机
         float forceLength = 100f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
@@ -62,6 +69,15 @@ public class Level0 implements Screen {
                 Gdx.graphics.getHeight() / forceLength);
 
 //         载入地图（我是不是有选择困难证？先加载地图还是先加载人物都要想半天。。没差啦，按照自然顺序先加载地图吧
+
+        rainMusic = Gdx.audio.newMusic(Gdx.files.internal("rain.mp3"));
+        rainMusic.setLooping(true);
+        rainMusic.play();
+
+
+
+
+
 
         // 创建世界
         world = new World(new Vector2(0, -9.8f), true);
@@ -74,16 +90,41 @@ public class Level0 implements Screen {
 
         mapGenerator.createGround();
 
-        players = new HashMap<>();
-        // Initialize the controlled player
-        controlledPlayer = new Player(texturePath, world, 5.1f, 5.1f);
-        players.put(userID, controlledPlayer);
+        Player red = new Player("./ball/smallRedBall.png", world, 5.0f, 5.0f);
+        Player green = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
+        Player purple = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
 
+        players = new HashMap<>();
+        playerMap = SharedClasses.playerMap;
+        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
+            System.out.println(player.getKey() + ":" + player.getValue());
+        }
+        players.put("red", red);
+        players.put("green", green);
+        players.put("purple", purple);
+
+
+        switch (userID) {
+            case "red":
+                controlledPlayer = red;
+                break;
+            case "green":
+                controlledPlayer = green;
+                break;
+            case "purple":
+                controlledPlayer = purple;
+                break;
+            default:
+                controlledPlayer = red;
+                break;
+        }
+
+        gameClient.sendPlayerMap();
 
     }
 
-    public Level0(String userID, String texturePath, String roomCode) {
-        this(userID, texturePath);
+    public Level0(String userID, GameClient gameClient, String roomCode) {
+        this(userID, gameClient);
         Skin skin = VisUI.getSkin();
 
         // 创建标签控件
@@ -101,6 +142,7 @@ public class Level0 implements Screen {
         stage.addActor(table);
     }
 
+
     @Override
     public void show() {
 
@@ -109,15 +151,21 @@ public class Level0 implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        for (Map.Entry<String, Player> role : players.entrySet()) {
+            SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
+        }
+
+        gameClient.sendPlayerMap();
 
         mapGenerator.getMapRenderer().setView(smoothCamera);
         mapGenerator.getMapRenderer().render();
 
-//        smoothCamera.update(redBall);
+//        smoothCamera.update(controlledPlayer);
 
         // 将绘制与相机投影绑定
         batch.setProjectionMatrix(smoothCamera.combined);
 
+//        players = gameClient.gameplayers;
         batch.begin();
         for (Player player : players.values()) {
             player.render(batch);
@@ -127,6 +175,7 @@ public class Level0 implements Screen {
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
 
+        updatePlayers();
         handleInput();
 
         // 给Box2D世界里的物体绘制轮廓，正式游戏需要注释掉这个渲染
@@ -136,25 +185,23 @@ public class Level0 implements Screen {
         world.step(1 / 60f, 6, 2);
     }
 
-    public void addPlayer(String userID, String texturePath) {
-        Player player = new Player(texturePath, world, 5.1f, 5.1f);
-        players.put(userID, player);
-    }
-
-    public void updatePlayerPosition(String userID, Vector2 position) {
-        Player player = players.get(userID);
-        if (player != null) {
-            player.setPosition(position.x, position.y);
-        }
-    }
-
     private void handleInput() {
-        if (Gdx.input.isKeyPressed(Input.Keys.D))
-            greenBall.move(0.1f, 0);
-        if (Gdx.input.isKeyPressed(Input.Keys.A))
-            greenBall.move(-0.1f, 0);
-        if (Gdx.input.isKeyPressed(Input.Keys.W))
-            greenBall.jump(0, 6);
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+            controlledPlayer.move(0.1f, 0);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+            controlledPlayer.move(-0.1f, 0);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+            controlledPlayer.jump(0, 6);
+        }
+
+    }
+
+    private void updatePlayers() {
+        for (Map.Entry<String, SharedClasses.PlayerState> playerState : SharedClasses.playerMap.entrySet()) {
+            players.get(playerState.getKey()).updatePosition(playerState.getValue().getX(), playerState.getValue().getY());
+        }
     }
 
     @Override

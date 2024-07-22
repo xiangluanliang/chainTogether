@@ -38,6 +38,7 @@ public class LoginScreen implements Screen {
     public GameClient gameClient;
 
     public String userID;
+    String path;
 
     public LoginScreen(Game game) {
         this.game = game;
@@ -141,6 +142,24 @@ public class LoginScreen implements Screen {
                     JOptionPane.showMessageDialog(null, "Welcome！", "Message", -1);
                     addLoginInfo(userID);
                     loginTable.remove();
+
+                    switch (userID) {
+                        case "red": {
+                            path = "./ball/smallRedBall.png";
+                            break;
+                        }
+                        case "green": {
+                            path = "./ball/smallGreenBall.png";
+                            break;
+                        }
+                        case "purple": {
+                            path = "./ball/smallPurpleBall.png";
+                            break;
+                        }
+                        default: {
+                            path = "./ball/smallRedBall.png";
+                        }
+                    }
                     stage.addActor(createRoomTable());
                 } else {
                     JOptionPane.showMessageDialog(null, "User not found！", "Message", -1);
@@ -220,8 +239,6 @@ public class LoginScreen implements Screen {
     private Table createRoomTable() {
 
 
-
-
         TextButton enterRoomButton = new TextButton("Enter Room", VisUI.getSkin());
         TextButton createRoomButton = new TextButton("Create Room", VisUI.getSkin());
         TextButton exitButton = new TextButton("Exit", VisUI.getSkin());
@@ -244,15 +261,9 @@ public class LoginScreen implements Screen {
         createRoomButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-//                String roomCode = GameUtil.generateRoomNumber(); // 生成房间码
-//                try {
-////                    gameClient.createRoom(roomCode);
-//                    System.out.println("Generated Room Code: " + roomCode);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
                 try {
-                    gameClient = new GameClient(game, GameUtil.getServerAddress(), userID);
+                    gameClient = new GameClient(GameUtil.getServerAddress(), 12345);
+                    game.setScreen(new Level0(userID, gameClient));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -265,13 +276,9 @@ public class LoginScreen implements Screen {
                 showInputDialog("Enter RoomCode:", new InputListener() {
                     @Override
                     public void input(String input) {
-//                        try {
-//                            111
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
                         try {
-                            gameClient = new GameClient(game, GameUtil.getServerAddress(), userID);
+                            gameClient = new GameClient(GameUtil.getServerAddress(), 12345);
+                            game.setScreen(new Level0(userID, gameClient));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -284,7 +291,7 @@ public class LoginScreen implements Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 createRoomTable.remove();
-                gameClient.closeClient();
+//                gameClient.closeClient();
                 stage.addActor(createLoginTable());
             }
         });

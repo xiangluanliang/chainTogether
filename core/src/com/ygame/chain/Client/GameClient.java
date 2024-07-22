@@ -1,63 +1,62 @@
 package com.ygame.chain.Client;
 
-import com.badlogic.gdx.Game;
-import com.badlogic.gdx.math.Vector2;
-import com.esotericsoftware.kryonet.Client;
-import com.esotericsoftware.kryonet.Connection;
-import com.esotericsoftware.kryonet.Listener;
-import com.ygame.chain.screens.Level0;
-import com.ygame.chain.screens.Level1;
-import com.ygame.chain.utils.GameUtil;
 import com.ygame.chain.utils.SharedClasses;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.util.HashMap;
 
 public class GameClient {
-    private Client client;
-    private Game game;
-    private Level0 level0;
-    private String userID;
+    private Socket socket;
+    private ObjectOutputStream out;
+    private ObjectInputStream in;
+//    private Map<String, SharedClasses.PlayerState> playerMap = new HashMap<>();
+//    SharedClasses sharedClasses;
 
-    public GameClient(Game game, String serverAddress, String userID) throws IOException {
-        this.game = game;
-        this.userID = userID;
-        client = new Client();
-        GameUtil.KryoHelper.registerClasses(client.getKryo());
 
-        client.addListener(new Listener() {
-            @Override
-            public void received(Connection connection, Object object) {
-                if (object instanceof SharedClasses.JoinResponse) {
-                    SharedClasses.JoinResponse response = (SharedClasses.JoinResponse) object;
-//                    level0 = new Level0(userID, response.texturePath);
-//                    game.setScreen(level0);
-                    game.setScreen(new Level1());
-                } else if (object instanceof SharedClasses.PlayerMove) {
-                    SharedClasses.PlayerMove move = (SharedClasses.PlayerMove) object;
-                    level0.updatePlayerPosition(move.userID, move.position);
+    public GameClient(String serverAddress, int port) throws IOException {
+        socket = new Socket(serverAddress, port);
+        out = new ObjectOutputStream(socket.getOutputStream());
+        in = new ObjectInputStream(socket.getInputStream());
+        new SharedClasses();
+        new Thread(this::listenForUpdates).start();
+    }
+
+    private void listenForUpdates() {
+        try {
+            Object object;
+            while ((object = in.readObject()) != null) {
+                if (object instanceof HashMap) {
+                    HashMap<String, SharedClasses.PlayerState> receivedMap =
+                            (HashMap<String, SharedClasses.PlayerState>) object;
+                    SharedClasses.playerMap.clear();
+                    SharedClasses.playerMap.putAll(receivedMap);
+                    putPlayerMap(SharedClasses.playerMap);
                 }
             }
-        });
-
-        client.start();
-        client.connect(5000, serverAddress, 54555, 54777);
-
-        SharedClasses.JoinRequest joinRequest = new SharedClasses.JoinRequest(userID);
-        client.sendTCP(joinRequest);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    //    public void createRoom(String roomCode){
-//        SharedClasses.RoomCode room = new SharedClasses.RoomCode(roomCode);
-//        client.sendTCP(room);
-//
-//    }
-    public void sendMove(Vector2 position) {
-        SharedClasses.PlayerMove move = new SharedClasses.PlayerMove(userID, position);
-        client.sendTCP(move);
+    public void sendPlayerMap() {
+        try {
+            out.writeObject(SharedClasses.playerMap);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void closeClient() {
-        client.close();
+    public void putPlayerMap(HashMap<String, SharedClasses.PlayerState> playerMap) {
+        SharedClasses.playerMap = playerMap;
+//        for (Map.Entry<String, SharedClasses.PlayerState> player :
+//                SharedClasses.playerMap.entrySet()) {
+//            System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
+//        }
+//        System.out.println("send successful");
     }
 
 }
