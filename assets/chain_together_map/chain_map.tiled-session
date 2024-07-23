@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level-1.tmx",
+    "activeFile": "level-0.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -17,12 +17,20 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "level-1.tmx": {
-            "scale": 1.5,
-            "selectedLayer": 2,
+        "level-0.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 142.66666666666669,
-                "y": 715.6666666666666
+                "x": 1436,
+                "y": 990
+            }
+        },
+        "level-1.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1046,
+                "y": 639
             }
         },
         "tileset.tsx": {
@@ -38,14 +46,16 @@
         "level-1.tmx",
         "0-tileset-32x32.tsx",
         "tileset.tsx",
-        "0-tileset.tsx"
+        "0-tileset.tsx",
+        "level-0.tmx"
     ],
     "project": "chain_map.tiled-project",
     "recentFiles": [
-        "0-tileset.tsx",
-        "tileset.tsx",
+        "level-1.tmx",
         "0-tileset-32x32.tsx",
-        "level-1.tmx"
+        "tileset.tsx",
+        "0-tileset.tsx",
+        "level-0.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }

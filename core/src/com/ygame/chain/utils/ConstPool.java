@@ -1,4 +1,4 @@
-package com.ygame.chain;
+package com.ygame.chain.utils;
 
 /**
  * ProjectName: chain_together_Yhr

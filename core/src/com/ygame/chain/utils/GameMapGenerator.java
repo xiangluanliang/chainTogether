@@ -1,5 +1,6 @@
-package com.ygame.chain;
+package com.ygame.chain.utils;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
@@ -15,7 +16,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
 
-import static com.ygame.chain.ConstPool.PPM;
+import static com.ygame.chain.utils.ConstPool.PPM;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -27,12 +28,12 @@ import static com.ygame.chain.ConstPool.PPM;
  * @Create 2024/7/16 15:19
  * @Version 1.0
  */
-public class MyMapGenerator {
+public class GameMapGenerator {
     World world;
     private final TiledMap map;
     private final OrthogonalTiledMapRenderer mapRenderer;
 
-    public MyMapGenerator(String path, World world) {
+    public GameMapGenerator(String path, World world) {
         this.world = world;
         map = new TmxMapLoader().load(path);
         mapRenderer = new OrthogonalTiledMapRenderer(map, 1 / PPM);
@@ -131,8 +132,6 @@ public class MyMapGenerator {
     }
 
     private void createEllipseShape(EllipseMapObject ellipseObject) {
-        // Ellipse 不能直接用 Box2D 形状表示，可以近似为圆形或多个小多边形组合。
-        // 以下是一个近似为圆形的示例。
         float x = (ellipseObject.getEllipse().x + ellipseObject.getEllipse().width / 2) / PPM;
         float y = (ellipseObject.getEllipse().y + ellipseObject.getEllipse().height / 2) / PPM;
         float radius = ellipseObject.getEllipse().width / 2 / PPM;
@@ -151,5 +150,17 @@ public class MyMapGenerator {
         body.createFixture(fixtureDef);
 
         circleShape.dispose();
+    }
+
+    public void createGround(){
+        // 兜底大地面，以免卡出无限掉落
+        BodyDef groundBodyDef = new BodyDef(); //定义
+        groundBodyDef.type = BodyDef.BodyType.StaticBody;// -mark-> 这里先设成静态，等加了刺就编到刺类里，触碰重开
+        groundBodyDef.position.x = 0;
+        groundBodyDef.position.y = -3;
+        Body groundBody = world.createBody(groundBodyDef); //实体化
+        PolygonShape groundBox = new PolygonShape();
+        groundBox.setAsBox(Gdx.graphics.getWidth(), 1);
+        groundBody.createFixture(groundBox, 0);
     }
 }

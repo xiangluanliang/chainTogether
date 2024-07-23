@@ -124,6 +124,8 @@ project(":core") {
         api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         api "com.kotcrab.vis:vis-ui:1.4.11"
         api "com.badlogicgames.ashley:ashley:$ashleyVersion"
+        implementation 'mysql:mysql-connector-java:8.0.32'
+        implementation 'com.esotericsoftware:kryonet:2.22.0-RC1'
         
     }
 }

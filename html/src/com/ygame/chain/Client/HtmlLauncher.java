@@ -1,4 +1,4 @@
-package com.ygame.chain.client;
+package com.ygame.chain.Client;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
