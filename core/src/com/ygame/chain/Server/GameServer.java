@@ -89,8 +89,8 @@ public class GameServer {
                         for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
 //                            playerStates.put(player.getKey(), player.getValue());
 //                            SharedClasses.playerMap.put(player.getKey(), player.getValue());
-//                            SharedClasses.playerMap.get(player.getKey()).update(player.getValue().getX(), player.getValue().getY());
-                            SharedClasses.playerMap.get(player.getKey()).linearImpulse = player.getValue().linearImpulse;
+                            SharedClasses.playerMap.get(player.getKey()).update(player.getValue().getX(), player.getValue().getY());
+//                            SharedClasses.playerMap.get(player.getKey()).linearImpulse = player.getValue().linearImpulse;
 
                         }
 //                        SharedClasses.playerMap.clear();

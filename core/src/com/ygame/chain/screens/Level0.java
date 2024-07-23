@@ -158,7 +158,7 @@ public class Level0 implements Screen {
 //        players = gameClient.gameplayers;
 
         handleInput();
-        playersUpdate();
+//        playersUpdate();
 
         batch.begin();
         for (Player player : players.values()) {
@@ -166,10 +166,12 @@ public class Level0 implements Screen {
         }
         batch.end();
 
-//        for (Map.Entry<String, SharedClasses.PlayerState> playerState : SharedClasses.playerMap.entrySet()) {
-//            players.get(playerState.getKey()).movePlayerTo(playerState.getValue().getX(), playerState.getValue().getY());
-////            System.out.println(playerState.getValue().x + "," + playerState.getValue().y);
-//        }
+        for (Map.Entry<String, SharedClasses.PlayerState> playerState : SharedClasses.playerMap.entrySet()) {
+            if (!playerState.getKey().equals(userID)) {
+                players.get(playerState.getKey()).movePlayerTo(playerState.getValue().getX(), playerState.getValue().getY());
+            }
+//            System.out.println(playerState.getValue().x + "," + playerState.getValue().y);
+        }
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
 
@@ -179,9 +181,9 @@ public class Level0 implements Screen {
 //        }
 
 
-//        for (Map.Entry<String, Player> role : players.entrySet()) {
-//            SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
-//        }
+        for (Map.Entry<String, Player> role : players.entrySet()) {
+            SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
+        }
         gameClient.sendPlayerMap();
 
 
@@ -195,31 +197,31 @@ public class Level0 implements Screen {
     private void handleInput() {
         if (Gdx.input.isKeyPressed(Input.Keys.D)) {
             controlledPlayer.move(new Vector2(0.1f, 0));
-            SharedClasses.playerMap.get(userID).linearImpulse = new Vector2(0.1f, 0);
+//            SharedClasses.playerMap.get(userID).linearImpulse = new Vector2(0.1f, 0);
 //            controlledPlayer.getBody().getPosition().x += 2;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
             controlledPlayer.move(new Vector2(-0.1f, 0));
-            SharedClasses.playerMap.get(userID).linearImpulse = new Vector2(-0.1f, 0);
+//            SharedClasses.playerMap.get(userID).linearImpulse = new Vector2(-0.1f, 0);
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             controlledPlayer.jump(new Vector2(0, 6f));
-            SharedClasses.playerMap.get(userID).linearImpulse = new Vector2(0, 6f);
+//            SharedClasses.playerMap.get(userID).linearImpulse = new Vector2(0, 6f);
 
         }
 
     }
 
-    private void playersUpdate() {
-        for (Map.Entry<String, Player> role : players.entrySet()) {
-            if (!role.getKey().equals(userID)) {
-                role.getValue().move(SharedClasses.playerMap.get(role.getKey()).linearImpulse);
-                SharedClasses.playerMap.get(role.getKey()).linearImpulse = new Vector2(0, 0);
-//                SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
-            }
-        }
-    }
+//    private void playersUpdate() {
+//        for (Map.Entry<String, Player> role : players.entrySet()) {
+//            if (!role.getKey().equals(userID)) {
+//                role.getValue().move(SharedClasses.playerMap.get(role.getKey()).linearImpulse);
+//                SharedClasses.playerMap.get(role.getKey()).linearImpulse = new Vector2(0, 0);
+////                SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
+//            }
+//        }
+//    }
 
     @Override
     public void resize(int width, int height) {
