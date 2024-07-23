@@ -77,18 +77,18 @@ public class Player {
         return Width;
     }
 
-    public void move(float x, float y) {
+    public void move(Vector2 vec) {
         if (Math.abs(roleBody.getLinearVelocity().x) <= 5) {
-            roleBody.applyLinearImpulse(new Vector2(x, y), roleBody.getWorldCenter(), true);
+            roleBody.applyLinearImpulse(vec, roleBody.getWorldCenter(), true);
         }
     }
 
-    public void jump(float x, float y) {
+    public void jump(Vector2 vec) {
         if (roleBody.getLinearVelocity().y == 0) {
             isJump = false;
         }
         if (!isJump && roleBody.getLinearVelocity().y <= 3) {
-            roleBody.applyLinearImpulse(new Vector2(x, y), roleBody.getWorldCenter(), true);
+            roleBody.applyLinearImpulse(vec, roleBody.getWorldCenter(), true);
             isJump = true;
         }
     }

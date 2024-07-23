@@ -1,5 +1,7 @@
 package com.ygame.chain.utils;
 
+import com.badlogic.gdx.math.Vector2;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,11 +30,13 @@ public class SharedClasses {
     public static class PlayerState implements Serializable {
         public String userID;
         public float x, y;
+        public Vector2 linearImpulse;
 
         public PlayerState(String userID) {
             this.userID = userID;
             x = 5.1f;
             y = 5.1f;
+            linearImpulse = new Vector2(0, 0);
         }
 
         public void update(float x, float y) {

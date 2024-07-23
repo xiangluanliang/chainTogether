@@ -156,11 +156,11 @@ public class Level1 implements Screen {
 
     private void handleInput() {
         if (Gdx.input.isKeyPressed(Input.Keys.D))
-            redBall.move(0.1f, 0);
+            redBall.move(new Vector2(0.1f, 0));
         if (Gdx.input.isKeyPressed(Input.Keys.A))
-            redBall.move(-0.1f, 0);
+            redBall.move(new Vector2(-0.1f, 0));
         if (Gdx.input.isKeyPressed(Input.Keys.W))
-            redBall.jump(0, 6);
+            redBall.jump(new Vector2(0, 6f));
     }
 
     public void updateBullet(float deltaTime) {
