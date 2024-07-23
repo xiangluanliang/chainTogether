@@ -7,15 +7,15 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import static com.ygame.chain.utils.SharedClasses.playerMap;
+
 public class GameServer {
+    public static int threadNumber = 0;
     private ServerSocket serverSocket;
     private ConcurrentMap<String, PlayerConnection> players = new ConcurrentHashMap<>();
-    private ConcurrentMap<String, SharedClasses.PlayerState> playerStates = new ConcurrentHashMap<>();
 
     public GameServer(int port) throws IOException {
         serverSocket = new ServerSocket(port);
@@ -34,6 +34,8 @@ public class GameServer {
                 new PlayerConnection(socket).start();
                 System.out.println(serverSocket.getInetAddress().getHostName() + ":" +
                         serverSocket.getInetAddress().getHostAddress() + "已连接");
+                threadNumber++;
+                System.out.println(threadNumber);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -46,23 +48,20 @@ public class GameServer {
         private ObjectOutputStream out;
         private ObjectInputStream in;
 
+
         public PlayerConnection(Socket socket) throws IOException {
             this.socket = socket;
             this.out = new ObjectOutputStream(socket.getOutputStream());
             this.in = new ObjectInputStream(socket.getInputStream());
+            this.setName(readUserID());
             players.put(this.getName(), this);
             System.out.println(this.getName());
-
         }
 
-        public void update(HashMap<String, SharedClasses.PlayerState> playerMap) {
+        public synchronized void update(SharedClasses.PlayerState playerState) {
             try {
                 out.reset();
-                out.writeObject(playerMap);
-//                for (Map.Entry<String, SharedClasses.PlayerState> player :
-//                        SharedClasses.playerMap.entrySet()) {
-//                    System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
-//                }
+                out.writeObject(playerState);
                 out.flush();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -74,50 +73,40 @@ public class GameServer {
         public void run() {
             try {
                 Object object;
-//                synchronized (SharedClasses.playerMap) {
-////                    out.writeObject(new HashMap<>(SharedClasses.playerMap));
-////                    out.writeObject(new SharedClasses().playerMap);
-//                    out.writeObject(SharedClasses.playerMap);
-//                }
                 while ((object = in.readObject()) != null) {
-                    if (object instanceof HashMap) {
-                        Map<String, SharedClasses.PlayerState> playerMap
-                                = (HashMap<String, SharedClasses.PlayerState>) object;
-//                        for (SharedClasses.PlayerState playerState : playerMap.values()){
-//                            System.out.println(playerState.getX() + ", " + playerState.getY());
-//                        }
-                        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
-//                            playerStates.put(player.getKey(), player.getValue());
-//                            SharedClasses.playerMap.put(player.getKey(), player.getValue());
-                            SharedClasses.playerMap.get(player.getKey()).update(player.getValue().getX(), player.getValue().getY());
-//                            SharedClasses.playerMap.get(player.getKey()).linearImpulse = player.getValue().linearImpulse;
+                    if (object instanceof SharedClasses.PlayerState) {
+                        SharedClasses.PlayerState state = (SharedClasses.PlayerState) object;
+//                        Map<String, SharedClasses.PlayerState> playerMap
+//                                = (HashMap<String, SharedClasses.PlayerState>) object;
+                        playerMap.put(this.getName(), state);
 
-                        }
-//                        SharedClasses.playerMap.clear();
-//                        SharedClasses.playerMap.putAll(playerMap);
-//                        for (Map.Entry<String, SharedClasses.PlayerState> player :
-//                                SharedClasses.playerMap.entrySet()) {
-//                            System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
+//                        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
+//                            SharedClasses.playerMap.get(player.getKey()).update(player.getValue().getX(), player.getValue().getY());
+////                            SharedClasses.playerMap.get(player.getKey()).linearImpulse = player.getValue().linearImpulse;
 //                        }
-//                        SharedClasses.playerMap = playerMap;
-//                        update(SharedClasses.playerMap);
-//                        out.writeObject(SharedClasses.playerMap);
+//
                         for (PlayerConnection conn : players.values()) {
                             if (conn != this) {
-                                conn.update(SharedClasses.playerMap);
+                                conn.update(playerMap.get(this.getName()));
                             }
                         }
 //                        System.out.println("rec server");
+                    }
+                    if (object instanceof Boolean) {
+                        SharedClasses.gameStart = (boolean) object;
+                        for (PlayerConnection conn : players.values()) {
+                            if (conn != this) {
+                                conn.startGame(SharedClasses.gameStart);
+                            }
+                        }
                     }
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             } finally {
-//                if (!players.isEmpty()) {
-//                    players.remove(userID);
-//                    playerStates.remove(userID);
-//                    broadcastStateUpdate();
-//                }
+                if (!players.isEmpty()) {
+                    players.remove(this.getName());
+                }
                 try {
                     socket.close();
                 } catch (IOException e) {
@@ -126,5 +115,23 @@ public class GameServer {
             }
         }
 
+        private void startGame(boolean gameStart) {
+            try {
+                out.reset();
+                out.writeObject(gameStart);
+                out.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        private String readUserID() {
+            try {
+                return (String) in.readObject();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
     }
 }

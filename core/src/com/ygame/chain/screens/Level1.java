@@ -13,6 +13,8 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ygame.chain.utils.*;
 
+import javax.swing.*;
+
 /**
  * ProjectName: chain_together_Yhr
  * ClassName: Level1
@@ -93,7 +95,9 @@ public class Level1 implements Screen {
                     if ((fixtureA.getUserData() != null && fixtureA.getUserData().equals("player")) ||
                             (fixtureB.getUserData() != null && fixtureB.getUserData().equals("player"))) {
                         playerHit = true;
-                        System.out.println("Player Hit! Game Over.");
+                        JOptionPane.showMessageDialog(null, "Player Hit! Game Over.", "Message", -1);
+//                        playerHit = false;
+
                     }
                 }
             }
@@ -113,8 +117,8 @@ public class Level1 implements Screen {
         // 创建角色
         // 有且仅有三个
         redBall = new Player("./ball/smallRedBall.png", world, 5, 5);
-        greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
-        purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
+//        greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
+//        purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
     }
 
     @Override
@@ -137,8 +141,8 @@ public class Level1 implements Screen {
         batch.begin();
         if (!playerHit) {
             redBall.render(batch);
-            greenBall.render(batch);
-            purpleBall.render(batch);
+//            greenBall.render(batch);
+//            purpleBall.render(batch);
         }
         for (Bullet bullet : bullets) {
             bullet.render(batch);
@@ -160,13 +164,13 @@ public class Level1 implements Screen {
         if (Gdx.input.isKeyPressed(Input.Keys.A))
             redBall.move(new Vector2(-0.1f, 0));
         if (Gdx.input.isKeyPressed(Input.Keys.W))
-            redBall.jump(new Vector2(0, 6f));
+            redBall.jump(new Vector2(0, 4f));
     }
 
     public void updateBullet(float deltaTime) {
 
         bulletTimer += deltaTime;
-        if (bulletTimer >= 0.5f) {
+        if (bulletTimer >= 2f) {
             bulletTimer = 0;
             bullets.add(new Bullet(bulletTexture, Gdx.graphics.getWidth() / ConstPool.PPM, 1, world)); // 从右下角发射
         }

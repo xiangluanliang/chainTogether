@@ -6,22 +6,21 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.Map;
 
 public class GameClient {
     private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
-//    private Map<String, SharedClasses.PlayerState> playerMap = new HashMap<>();
-//    SharedClasses sharedClasses;
+    private String userID;
 
 
-    public GameClient(String serverAddress, int port) throws IOException {
+    public GameClient(String serverAddress, int port, String userID) throws IOException {
         socket = new Socket(serverAddress, port);
         out = new ObjectOutputStream(socket.getOutputStream());
         in = new ObjectInputStream(socket.getInputStream());
         new SharedClasses();
+        this.userID = userID;
+        sendUserID(userID);
         new Thread(this::listenForUpdates).start();
     }
 
@@ -29,18 +28,17 @@ public class GameClient {
         try {
             Object object;
             while ((object = in.readObject()) != null) {
-                if (object instanceof HashMap) {
-                    HashMap<String, SharedClasses.PlayerState> receivedMap =
-                            (HashMap<String, SharedClasses.PlayerState>) object;
-                    for (Map.Entry<String, SharedClasses.PlayerState> player :
-                            receivedMap.entrySet()) {
-                        System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
-                    }
-                    for (Map.Entry<String, SharedClasses.PlayerState> player : receivedMap.entrySet()) {
-                        SharedClasses.playerMap.put(player.getKey(), player.getValue());
-                    }
-//                    SharedClasses.playerMap.clear();
-//                    SharedClasses.playerMap.putAll(receivedMap);
+                if (object instanceof SharedClasses.PlayerState) {
+                    SharedClasses.PlayerState state = (SharedClasses.PlayerState) object;
+                    SharedClasses.playerMap.put(state.userID, state);
+//                    HashMap<String, SharedClasses.PlayerState> receivedMap =
+//                            (HashMap<String, SharedClasses.PlayerState>) object;
+//                    for (Map.Entry<String, SharedClasses.PlayerState> player : receivedMap.entrySet()) {
+//                        SharedClasses.playerMap.put(player.getKey(), player.getValue());
+//                    }
+                }
+                if (object instanceof Boolean) {
+                    SharedClasses.gameStart = (boolean) object;
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
@@ -48,19 +46,41 @@ public class GameClient {
         }
     }
 
-    public void sendPlayerMap() {
+    public synchronized void sendPlayerMap(SharedClasses.PlayerState state) {
         try {
             out.reset();
-//            System.out.println("send!!!!!");
-//            for (SharedClasses.PlayerState playerState : SharedClasses.playerMap.values()){
-//                System.out.println(playerState.getX() + ", " + playerState.getY());
-//            }
-            out.writeObject(SharedClasses.playerMap);
+            out.writeObject(state);
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    private void sendUserID(String userID) {
+        try {
+            out.writeObject(userID);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void close() {
+        try {
+            in.close();
+            out.close();
+            socket.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void statGame() {
+        try {
+            out.writeObject(SharedClasses.gameStart);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

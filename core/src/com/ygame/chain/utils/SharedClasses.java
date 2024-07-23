@@ -4,7 +4,6 @@ import com.badlogic.gdx.math.Vector2;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 
 public class SharedClasses {
 
@@ -12,6 +11,8 @@ public class SharedClasses {
     public static PlayerState red;
     public static PlayerState green;
     public static PlayerState purple;
+    public static boolean gameStart;
+
     public SharedClasses() {
         playerMap = new HashMap<>();
         red = new PlayerState("red");
@@ -20,28 +21,28 @@ public class SharedClasses {
         playerMap.put("red", red);
         playerMap.put("green", green);
         playerMap.put("purple", purple);
-        System.out.println("shared successful");
-        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
-            System.out.println(player.getKey() + ":" + player.getValue());
-        }
-        System.out.println("111");
+        gameStart = false;
     }
 
     public static class PlayerState implements Serializable {
         public String userID;
         public float x, y;
         public Vector2 linearImpulse;
+        public float angle;
+
 
         public PlayerState(String userID) {
             this.userID = userID;
             x = 5.1f;
             y = 5.1f;
             linearImpulse = new Vector2(0, 0);
+            this.angle = 0;
         }
 
-        public void update(float x, float y) {
+        public void update(float x, float y, float angle) {
             this.x = x;
             this.y = y;
+            this.angle = angle;
         }
 
         public float getX() {
