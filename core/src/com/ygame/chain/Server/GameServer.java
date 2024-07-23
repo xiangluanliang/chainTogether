@@ -8,12 +8,13 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class GameServer {
     private ServerSocket serverSocket;
-    //    private ConcurrentMap<String, PlayerConnection> players = new ConcurrentHashMap<>();
+    private ConcurrentMap<String, PlayerConnection> players = new ConcurrentHashMap<>();
     private ConcurrentMap<String, SharedClasses.PlayerState> playerStates = new ConcurrentHashMap<>();
 
     public GameServer(int port) throws IOException {
@@ -33,6 +34,7 @@ public class GameServer {
                 new PlayerConnection(socket).start();
                 System.out.println(serverSocket.getInetAddress().getHostName() + ":" +
                         serverSocket.getInetAddress().getHostAddress() + "已连接");
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -48,11 +50,19 @@ public class GameServer {
             this.socket = socket;
             this.out = new ObjectOutputStream(socket.getOutputStream());
             this.in = new ObjectInputStream(socket.getInputStream());
+            players.put(this.getName(), this);
+            System.out.println(this.getName());
+
         }
 
         public void update(HashMap<String, SharedClasses.PlayerState> playerMap) {
             try {
+                out.reset();
                 out.writeObject(playerMap);
+//                for (Map.Entry<String, SharedClasses.PlayerState> player :
+//                        SharedClasses.playerMap.entrySet()) {
+//                    System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
+//                }
                 out.flush();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -71,20 +81,30 @@ public class GameServer {
 //                }
                 while ((object = in.readObject()) != null) {
                     if (object instanceof HashMap) {
-                        HashMap<String, SharedClasses.PlayerState> playerMap
+                        Map<String, SharedClasses.PlayerState> playerMap
                                 = (HashMap<String, SharedClasses.PlayerState>) object;
-//                        for (Map.Entry<String,SharedClasses.PlayerState> player :playerMap.entrySet()){
-//                            players.put(player.getKey(),this);
+//                        for (SharedClasses.PlayerState playerState : playerMap.values()){
+//                            System.out.println(playerState.getX() + ", " + playerState.getY());
+//                        }
+                        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
 //                            playerStates.put(player.getKey(), player.getValue());
+//                            SharedClasses.playerMap.put(player.getKey(), player.getValue());
+                            SharedClasses.playerMap.get(player.getKey()).update(player.getValue().getX(), player.getValue().getY());
+                        }
+//                        SharedClasses.playerMap.clear();
+//                        SharedClasses.playerMap.putAll(playerMap);
+//                        for (Map.Entry<String, SharedClasses.PlayerState> player :
+//                                SharedClasses.playerMap.entrySet()) {
+//                            System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
 //                        }
-                        SharedClasses.playerMap = playerMap;
-                        update(SharedClasses.playerMap);
+//                        SharedClasses.playerMap = playerMap;
+//                        update(SharedClasses.playerMap);
 //                        out.writeObject(SharedClasses.playerMap);
-//                        for (PlayerConnection conn : players.values()){
-//                            if (conn != this){
-//                                conn.update(playerMap);
-//                            }
-//                        }
+                        for (PlayerConnection conn : players.values()) {
+                            if (conn != this) {
+                                conn.update(SharedClasses.playerMap);
+                            }
+                        }
 //                        System.out.println("rec server");
                     }
                 }

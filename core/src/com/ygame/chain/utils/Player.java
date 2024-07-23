@@ -105,11 +105,8 @@ public class Player {
         sprite.draw(batch);
     }
 
-    public void updatePosition(float x, float y) {
-        if (roleBody != null) {
-            roleBody.getPosition().x = x;
-            roleBody.getPosition().y = y;
-        }
+    public void movePlayerTo(float x, float y) {
+        roleBody.setTransform(x, y, roleBody.getAngle());
     }
 
     public float getPosX() {

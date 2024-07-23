@@ -38,7 +38,6 @@ public class LoginScreen implements Screen {
     public GameClient gameClient;
 
     public String userID;
-    String path;
 
     public LoginScreen(Game game) {
         this.game = game;
@@ -143,23 +142,6 @@ public class LoginScreen implements Screen {
                     addLoginInfo(userID);
                     loginTable.remove();
 
-                    switch (userID) {
-                        case "red": {
-                            path = "./ball/smallRedBall.png";
-                            break;
-                        }
-                        case "green": {
-                            path = "./ball/smallGreenBall.png";
-                            break;
-                        }
-                        case "purple": {
-                            path = "./ball/smallPurpleBall.png";
-                            break;
-                        }
-                        default: {
-                            path = "./ball/smallRedBall.png";
-                        }
-                    }
                     stage.addActor(createRoomTable());
                 } else {
                     JOptionPane.showMessageDialog(null, "User not found！", "Message", -1);

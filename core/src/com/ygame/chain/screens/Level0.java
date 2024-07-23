@@ -48,7 +48,6 @@ public class Level0 implements Screen {
     GameMapGenerator mapGenerator;
     private Stage stage;
     String userID;
-    Map<String, SharedClasses.PlayerState> playerMap;
     private GameClient gameClient;
     private Music rainMusic;
 
@@ -72,12 +71,7 @@ public class Level0 implements Screen {
 
         rainMusic = Gdx.audio.newMusic(Gdx.files.internal("rain.mp3"));
         rainMusic.setLooping(true);
-        rainMusic.play();
-
-
-
-
-
+//        rainMusic.play();
 
         // 创建世界
         world = new World(new Vector2(0, -9.8f), true);
@@ -95,10 +89,10 @@ public class Level0 implements Screen {
         Player purple = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
 
         players = new HashMap<>();
-        playerMap = SharedClasses.playerMap;
-        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
-            System.out.println(player.getKey() + ":" + player.getValue());
-        }
+//        new SharedClasses();
+//        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
+//            System.out.println(player.getKey() + ":" + player.getValue());
+//        }
         players.put("red", red);
         players.put("green", green);
         players.put("purple", purple);
@@ -119,7 +113,7 @@ public class Level0 implements Screen {
                 break;
         }
 
-        gameClient.sendPlayerMap();
+//        gameClient.sendPlayerMap();
 
     }
 
@@ -151,11 +145,7 @@ public class Level0 implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        for (Map.Entry<String, Player> role : players.entrySet()) {
-            SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
-        }
 
-        gameClient.sendPlayerMap();
 
         mapGenerator.getMapRenderer().setView(smoothCamera);
         mapGenerator.getMapRenderer().render();
@@ -166,17 +156,34 @@ public class Level0 implements Screen {
         batch.setProjectionMatrix(smoothCamera.combined);
 
 //        players = gameClient.gameplayers;
+
+        handleInput();
+
+
         batch.begin();
         for (Player player : players.values()) {
             player.render(batch);
         }
         batch.end();
 
+        for (Map.Entry<String, SharedClasses.PlayerState> playerState : SharedClasses.playerMap.entrySet()) {
+            players.get(playerState.getKey()).movePlayerTo(playerState.getValue().getX(), playerState.getValue().getY());
+//            System.out.println(playerState.getValue().x + "," + playerState.getValue().y);
+        }
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
 
-        updatePlayers();
-        handleInput();
+//        for (Map.Entry<String, SharedClasses.PlayerState> player :
+//                SharedClasses.playerMap.entrySet()) {
+//            System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
+//        }
+
+
+        for (Map.Entry<String, Player> role : players.entrySet()) {
+            SharedClasses.playerMap.get(role.getKey()).update(role.getValue().getPosX(), role.getValue().getPosY());
+        }
+        gameClient.sendPlayerMap();
+
 
         // 给Box2D世界里的物体绘制轮廓，正式游戏需要注释掉这个渲染
         debugRenderer.render(world, smoothCamera.combined);
@@ -188,6 +195,7 @@ public class Level0 implements Screen {
     private void handleInput() {
         if (Gdx.input.isKeyPressed(Input.Keys.D)) {
             controlledPlayer.move(0.1f, 0);
+//            controlledPlayer.getBody().getPosition().x += 2;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
             controlledPlayer.move(-0.1f, 0);
@@ -196,12 +204,6 @@ public class Level0 implements Screen {
             controlledPlayer.jump(0, 6);
         }
 
-    }
-
-    private void updatePlayers() {
-        for (Map.Entry<String, SharedClasses.PlayerState> playerState : SharedClasses.playerMap.entrySet()) {
-            players.get(playerState.getKey()).updatePosition(playerState.getValue().getX(), playerState.getValue().getY());
-        }
     }
 
     @Override

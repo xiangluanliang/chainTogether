@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Map;
 
 public class GameClient {
     private Socket socket;
@@ -31,9 +32,15 @@ public class GameClient {
                 if (object instanceof HashMap) {
                     HashMap<String, SharedClasses.PlayerState> receivedMap =
                             (HashMap<String, SharedClasses.PlayerState>) object;
-                    SharedClasses.playerMap.clear();
-                    SharedClasses.playerMap.putAll(receivedMap);
-                    putPlayerMap(SharedClasses.playerMap);
+                    for (Map.Entry<String, SharedClasses.PlayerState> player :
+                            receivedMap.entrySet()) {
+                        System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
+                    }
+                    for (Map.Entry<String, SharedClasses.PlayerState> player : receivedMap.entrySet()) {
+                        SharedClasses.playerMap.put(player.getKey(), player.getValue());
+                    }
+//                    SharedClasses.playerMap.clear();
+//                    SharedClasses.playerMap.putAll(receivedMap);
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
@@ -43,6 +50,11 @@ public class GameClient {
 
     public void sendPlayerMap() {
         try {
+            out.reset();
+//            System.out.println("send!!!!!");
+//            for (SharedClasses.PlayerState playerState : SharedClasses.playerMap.values()){
+//                System.out.println(playerState.getX() + ", " + playerState.getY());
+//            }
             out.writeObject(SharedClasses.playerMap);
             out.flush();
         } catch (IOException e) {
@@ -50,13 +62,5 @@ public class GameClient {
         }
     }
 
-    public void putPlayerMap(HashMap<String, SharedClasses.PlayerState> playerMap) {
-        SharedClasses.playerMap = playerMap;
-//        for (Map.Entry<String, SharedClasses.PlayerState> player :
-//                SharedClasses.playerMap.entrySet()) {
-//            System.out.println(player.getValue().getX() + ", " + player.getValue().getY());
-//        }
-//        System.out.println("send successful");
-    }
 
 }

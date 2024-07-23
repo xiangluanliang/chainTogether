@@ -31,6 +31,8 @@ public class SharedClasses {
 
         public PlayerState(String userID) {
             this.userID = userID;
+            x = 5.1f;
+            y = 5.1f;
         }
 
         public void update(float x, float y) {

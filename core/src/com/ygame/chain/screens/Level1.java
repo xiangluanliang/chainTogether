@@ -4,14 +4,14 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.ygame.chain.utils.GameMapGenerator;
-import com.ygame.chain.utils.Player;
-import com.ygame.chain.utils.SmoothCamera;
+import com.ygame.chain.utils.*;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -35,14 +35,21 @@ public class Level1 implements Screen {
 
     GameMapGenerator mapGenerator;
     private Stage stage;
+    private Array<Bullet> bullets;
+    private float bulletTimer;
+
+    private boolean playerHit;
+
+    private Texture bulletTexture;
 
     public Level1(){
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
+        bulletTexture = new Texture("drop.png");
 
         // 创建相机
-        float forceLength = 128f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
+        float forceLength = 100f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
 
         smoothCamera = new SmoothCamera(0.9f);
         smoothCamera.setToOrtho(false,
@@ -70,6 +77,39 @@ public class Level1 implements Screen {
         mapGenerator = new GameMapGenerator("./chain_together_map/level-1.tmx", world);
         mapGenerator.createTerrainFromTiled("terrainObj");
 
+
+        bullets = new Array<>();
+        bulletTimer = 0;
+        playerHit = false;
+
+        world.setContactListener(new ContactListener() {
+            @Override
+            public void beginContact(Contact contact) {
+                Fixture fixtureA = contact.getFixtureA();
+                Fixture fixtureB = contact.getFixtureB();
+
+                if ((fixtureA.getUserData() != null && fixtureA.getUserData().equals("bullet")) ||
+                        (fixtureB.getUserData() != null && fixtureB.getUserData().equals("bullet"))) {
+                    if ((fixtureA.getUserData() != null && fixtureA.getUserData().equals("player")) ||
+                            (fixtureB.getUserData() != null && fixtureB.getUserData().equals("player"))) {
+                        playerHit = true;
+                        System.out.println("Player Hit! Game Over.");
+                    }
+                }
+            }
+
+            @Override
+            public void endContact(Contact contact) {
+            }
+
+            @Override
+            public void preSolve(Contact contact, Manifold oldManifold) {
+            }
+
+            @Override
+            public void postSolve(Contact contact, ContactImpulse impulse) {
+            }
+        });
         // 创建角色
         // 有且仅有三个
         redBall = new Player("./ball/smallRedBall.png", world, 5, 5);
@@ -89,14 +129,20 @@ public class Level1 implements Screen {
         mapGenerator.getMapRenderer().setView(smoothCamera);
         mapGenerator.getMapRenderer().render();
 
-        smoothCamera.update(redBall);
+        updateBullet(delta);
+//        smoothCamera.update(redBall);
 
         // 将绘制与相机投影绑定
         batch.setProjectionMatrix(smoothCamera.combined);
         batch.begin();
-        redBall.render(batch);
-        greenBall.render(batch);
-        purpleBall.render(batch);
+        if (!playerHit) {
+            redBall.render(batch);
+            greenBall.render(batch);
+            purpleBall.render(batch);
+        }
+        for (Bullet bullet : bullets) {
+            bullet.render(batch);
+        }
         batch.end();
 
         handleInput();
@@ -115,6 +161,25 @@ public class Level1 implements Screen {
             redBall.move(-0.1f, 0);
         if (Gdx.input.isKeyPressed(Input.Keys.W))
             redBall.jump(0, 6);
+    }
+
+    public void updateBullet(float deltaTime) {
+
+        bulletTimer += deltaTime;
+        if (bulletTimer >= 0.5f) {
+            bulletTimer = 0;
+            bullets.add(new Bullet(bulletTexture, Gdx.graphics.getWidth() / ConstPool.PPM, 1, world)); // 从右下角发射
+        }
+        for (int i = bullets.size - 1; i >= 0; i--) {
+            Bullet bullet = bullets.get(i);
+            bullet.update(deltaTime);
+            // 移除离开屏幕的子弹
+            if (bullet.isOffScreen()) {
+                bullets.removeIndex(i);
+                world.destroyBody(bullet.getBody());
+            }
+        }
+
     }
     @Override
     public void resize(int width, int height) {

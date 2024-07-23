@@ -8,7 +8,7 @@ public class ChainTogether extends Game {
     @Override
     public void create() {
         setScreen(new LoginScreen(this));
-//        setScreen(new Level0());
+//        setScreen(new Level1());
     }
 
     @Override
