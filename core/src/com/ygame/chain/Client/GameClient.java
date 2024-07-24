@@ -75,7 +75,7 @@ public class GameClient {
         }
     }
 
-    public void statGame() {
+    public void startGame() {
         try {
             out.writeObject(SharedClasses.gameStart);
             out.flush();

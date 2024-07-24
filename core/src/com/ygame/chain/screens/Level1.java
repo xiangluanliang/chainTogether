@@ -1,19 +1,35 @@
 package com.ygame.chain.screens;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.kotcrab.vis.ui.VisUI;
+import com.ygame.chain.Client.GameClient;
 import com.ygame.chain.utils.*;
 
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+import static com.ygame.chain.utils.ConstPool.PPM;
 
 /**
  * ProjectName: chain_together_Yhr
@@ -27,9 +43,8 @@ import javax.swing.*;
  */
 public class Level1 implements Screen {
     private SpriteBatch batch;
-    private Player redBall;
-    private Player greenBall;
-    private Player purpleBall;
+    String userID;
+    private Map<String, Player> players;
     private SmoothCamera smoothCamera;
 
     private World world;
@@ -37,52 +52,53 @@ public class Level1 implements Screen {
 
     GameMapGenerator mapGenerator;
     private Stage stage;
+    private Player controlledPlayer;
+    private GameClient gameClient;
+    private Music rainMusic;
+    private Game game;
     private Array<Bullet> bullets;
     private float bulletTimer;
-
-    private boolean playerHit;
-
     private Texture bulletTexture;
+    private LevelKey starKey;
 
-    public Level1(){
+    public Level1(Game game, String userID, GameClient gameClient) {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
+        this.gameClient = gameClient;
+        this.userID = userID;
+        this.game = game;
         bulletTexture = new Texture("drop.png");
 
-        // 创建相机
+//         创建相机
         float forceLength = 100f;// 相机焦距（缩小倍率） -mark-> 后期考虑要不要把相机封装起来（感觉没必要？
 
-        smoothCamera = new SmoothCamera(0.9f);
+        smoothCamera = new SmoothCamera(1);
         smoothCamera.setToOrtho(false,
                 Gdx.graphics.getWidth() / forceLength,
                 Gdx.graphics.getHeight() / forceLength);
 
-        // 载入地图（我是不是有选择困难证？先加载地图还是先加载人物都要想半天。。没差啦，按照自然顺序先加载地图吧
+//         载入地图（我是不是有选择困难证？先加载地图还是先加载人物都要想半天。。没差啦，按照自然顺序先加载地图吧
+
+        rainMusic = Gdx.audio.newMusic(Gdx.files.internal("bgm.mp3"));
+        rainMusic.setLooping(true);
+        rainMusic.play();
 
         // 创建世界
         world = new World(new Vector2(0, -9.8f), true);
         // 试调渲染
         debugRenderer = new Box2DDebugRenderer();
 
-        // 兜底大地面，以免卡出无限掉落
-        BodyDef groundBodyDef = new BodyDef(); //定义
-        groundBodyDef.type = BodyDef.BodyType.StaticBody;// -mark-> 这里先设成静态，等加了刺就编到刺类里，触碰重开
-        groundBodyDef.position.x = 0;
-        groundBodyDef.position.y = -3;
-        Body groundBody = world.createBody(groundBodyDef); //实体化
-        PolygonShape groundBox = new PolygonShape();
-        groundBox.setAsBox(Gdx.graphics.getWidth(), 1);
-        groundBody.createFixture(groundBox, 0);
-
         // 加载所有碰撞箱
         mapGenerator = new GameMapGenerator("./chain_together_map/level-1.tmx", world);
         mapGenerator.createTerrainFromTiled("terrainObj");
 
+        mapGenerator.createGround();
 
         bullets = new Array<>();
         bulletTimer = 0;
-        playerHit = false;
+
+        starKey = null;
 
         world.setContactListener(new ContactListener() {
             @Override
@@ -90,15 +106,17 @@ public class Level1 implements Screen {
                 Fixture fixtureA = contact.getFixtureA();
                 Fixture fixtureB = contact.getFixtureB();
 
-                if ((fixtureA.getUserData() != null && fixtureA.getUserData().equals("bullet")) ||
-                        (fixtureB.getUserData() != null && fixtureB.getUserData().equals("bullet"))) {
-                    if ((fixtureA.getUserData() != null && fixtureA.getUserData().equals("player")) ||
-                            (fixtureB.getUserData() != null && fixtureB.getUserData().equals("player"))) {
-                        playerHit = true;
-                        JOptionPane.showMessageDialog(null, "Player Hit! Game Over.", "Message", -1);
-//                        playerHit = false;
-
+                if ((fixtureA.getUserData() != null && fixtureA.getUserData() instanceof Player) ||
+                        (fixtureB.getUserData() != null && fixtureB.getUserData() instanceof Player)) {
+                    if ((fixtureA.getUserData() != null && fixtureA.getUserData() instanceof Bullet) ||
+                            (fixtureB.getUserData() != null && fixtureB.getUserData() instanceof Bullet)) {
+                        pause();
+                    } else if ((fixtureA.getUserData() != null && fixtureA.getUserData() instanceof LevelKey) ||
+                            (fixtureB.getUserData() != null && fixtureB.getUserData() instanceof LevelKey)) {
+                        SharedClasses.gameStart = false;
+                        JOptionPane.showMessageDialog(null, "You Win!", "Message", -1);
                     }
+
                 }
             }
 
@@ -114,57 +132,156 @@ public class Level1 implements Screen {
             public void postSolve(Contact contact, ContactImpulse impulse) {
             }
         });
-        // 创建角色
-        // 有且仅有三个
-        redBall = new Player("./ball/smallRedBall.png", world, 5, 5);
-//        greenBall = new Player("./ball/smallGreenBall.png", world, 5.1f, 5.1f);
-//        purpleBall = new Player("./ball/smallPurpleBall.png", world, 5.2f, 5.2f);
+
+        Player red = new Player("red", world, 5.0f, 5.0f);
+        Player green = new Player("green", world, 5.1f, 5.1f);
+        Player purple = new Player("purple", world, 5.2f, 5.2f);
+
+        createDistanceJoint(red.getBody(), green.getBody(), 200 / PPM);
+        createDistanceJoint(green.getBody(), purple.getBody(), 200 / PPM);
+
+        players = new HashMap<>();
+
+        players.put("red", red);
+        players.put("green", green);
+        players.put("purple", purple);
+
+
+        switch (userID) {
+            case "red":
+                controlledPlayer = red;
+                break;
+            case "green":
+                controlledPlayer = green;
+                break;
+            case "purple":
+                controlledPlayer = purple;
+                break;
+            default:
+                controlledPlayer = red;
+                break;
+        }
+
+
+        Skin skin = VisUI.getSkin();
+
+        // 创建标签控件
+        Label roomNumberLabel = new Label("", skin);
+
+        TextButton level0Button = new TextButton("Start Level0", VisUI.getSkin());
+        TextButton exitButton = new TextButton("Exit", VisUI.getSkin());
+
+        // 创建一个Table来布局控件
+        Table table = new Table();
+        table.top().right();
+        table.setFillParent(true);
+        table.add(roomNumberLabel).pad(100);
+
+        table.row();
+        table.add(level0Button).colspan(1).center().padBottom(30);
+
+        table.row();
+        table.add(exitButton).colspan(1).center().padBottom(30);
+
+        exitButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                players.remove(userID);
+                gameClient.close();
+                game.setScreen(new LoginScreen(game));
+            }
+        });
+
+        level0Button.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                starKey = new LevelKey(world, 17f, 8f);
+                roomNumberLabel.setVisible(false);
+                SharedClasses.gameStart = true;
+                gameClient.startGame();
+            }
+        });
+        stage.addActor(table);
+    }
+
+    private void createDistanceJoint(Body bodyA, Body bodyB, float length) {
+        RopeJointDef jointDef = new RopeJointDef();
+        jointDef.bodyA = bodyA;
+        jointDef.bodyB = bodyB;
+        jointDef.maxLength = length;
+        jointDef.localAnchorA.set(0, 0);
+        jointDef.localAnchorB.set(0, 0);
+
+        world.createJoint(jointDef);
     }
 
     @Override
     public void show() {
-
     }
 
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         mapGenerator.getMapRenderer().setView(smoothCamera);
         mapGenerator.getMapRenderer().render();
 
-        updateBullet(delta);
-//        smoothCamera.update(redBall);
+//        smoothCamera.update(controlledPlayer);
 
         // 将绘制与相机投影绑定
         batch.setProjectionMatrix(smoothCamera.combined);
-        batch.begin();
-        if (!playerHit) {
-            redBall.render(batch);
-//            greenBall.render(batch);
-//            purpleBall.render(batch);
+
+        handleInput();
+        for (Map.Entry<String, SharedClasses.PlayerState> playerState : SharedClasses.playerMap.entrySet()) {
+            if (!playerState.getKey().equals(userID)) {
+                players.get(playerState.getKey()).movePlayerTo(playerState.getValue().getX(), playerState.getValue().getY(), playerState.getValue().angle);
+            }
         }
-        for (Bullet bullet : bullets) {
-            bullet.render(batch);
+
+        batch.begin();
+        for (Player player : players.values()) {
+            player.render(batch);
+        }
+        if (SharedClasses.gameStart) {
+            for (Bullet bullet : bullets) {
+                bullet.render(batch);
+            }
+            if (starKey != null) {
+                starKey.render(batch);
+            }
         }
         batch.end();
 
-        handleInput();
+        stage.act(Gdx.graphics.getDeltaTime());
+        stage.draw();
 
-        // 给Box2D世界里的物体绘制轮廓，正式游戏需要注释掉这个渲染
+        SharedClasses.playerMap.get(userID).update(controlledPlayer.getPosX(), controlledPlayer.getPosY(), controlledPlayer.getBody().getAngle());
+        gameClient.sendPlayerMap(SharedClasses.playerMap.get(userID));
+
+        // 给物体绘制轮廓，正式游戏需要注释掉这个渲染
         debugRenderer.render(world, smoothCamera.combined);
 
+        if (SharedClasses.gameStart) {
+            updateBullet(delta);
+        }
+
         // 更新世界里的关系 这个要放在绘制之后，最好放最后面
-        world.step(1 / 60f, 6, 2);
+        world.step(1 / 30f, 6, 2);
+
+
     }
 
     private void handleInput() {
-        if (Gdx.input.isKeyPressed(Input.Keys.D))
-            redBall.move(new Vector2(0.1f, 0));
-        if (Gdx.input.isKeyPressed(Input.Keys.A))
-            redBall.move(new Vector2(-0.1f, 0));
-        if (Gdx.input.isKeyPressed(Input.Keys.W))
-            redBall.jump(new Vector2(0, 4f));
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+            controlledPlayer.move(new Vector2(0.1f, 0));
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+            controlledPlayer.move(new Vector2(-0.1f, 0));
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+            controlledPlayer.jump(new Vector2(0, 6f));
+
+        }
+
     }
 
     public void updateBullet(float deltaTime) {
@@ -172,7 +289,7 @@ public class Level1 implements Screen {
         bulletTimer += deltaTime;
         if (bulletTimer >= 2f) {
             bulletTimer = 0;
-            bullets.add(new Bullet(bulletTexture, Gdx.graphics.getWidth() / ConstPool.PPM, 1, world)); // 从右下角发射
+            bullets.add(new Bullet(bulletTexture, Gdx.graphics.getWidth() / PPM, new Random().nextInt(10) % (10) + 1, world)); // 从右下角发射
         }
         for (int i = bullets.size - 1; i >= 0; i--) {
             Bullet bullet = bullets.get(i);
@@ -185,6 +302,7 @@ public class Level1 implements Screen {
         }
 
     }
+
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
@@ -192,6 +310,25 @@ public class Level1 implements Screen {
 
     @Override
     public void pause() {
+        int result = JOptionPane.showOptionDialog(null, "请选择重新开始或退出。", "游戏结束",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[]{"重开", "退出"}, "重开");
+
+        if (result == JOptionPane.YES_OPTION) {
+//            players.remove(userID);
+            gameClient.close();
+            game.setScreen(new LoginScreen(game));
+//            SharedClasses.gameStart = false;
+//            for (Player player :
+//                    players.values()) {
+//                player.movePlayerTo(5f, 5f, 0);
+//            }
+        } else if (result == JOptionPane.NO_OPTION) {
+            Gdx.app.exit();
+        }
+    }
+
+    public void winTable() {
+
     }
 
     @Override

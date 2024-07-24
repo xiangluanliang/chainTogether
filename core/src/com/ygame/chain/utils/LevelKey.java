@@ -27,14 +27,14 @@ public class LevelKey {
     private Sprite sprite;
     private Body starBody;
 
-    public LevelKey(World world) {
+    public LevelKey(World world, float bornX, float bornY) {
         Texture img = new Texture("./resourse/space-shooter/star-1.png");
         role = new TextureRegion(img, img.getWidth(), img.getHeight());
 
         BodyDef starBodyDef = new BodyDef(); //定义
         starBodyDef.type = BodyDef.BodyType.StaticBody;// -mark-> 这里先设成静态，等加了刺就编到刺类里，触碰重开
-        starBodyDef.position.x = 17;
-        starBodyDef.position.y = 2;
+        starBodyDef.position.x = bornX;
+        starBodyDef.position.y = bornY;
         starBody = world.createBody(starBodyDef); //实体化
         PolygonShape starBox = new PolygonShape();
         starBox.setAsBox(img.getWidth() / 2f / PPM - 2 / PPM, img.getHeight() / 2f / PPM - 2 / PPM);

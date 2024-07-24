@@ -18,7 +18,8 @@ public class GameUtil {
     public static String generateRoomNumber() {
         Random random = new Random();
         int number = 1000 + random.nextInt(9000);
-        return String.valueOf(number);
+//        return String.valueOf(number);
+        return "4210";
     }
 
     public static String getServerAddress() throws UnknownHostException {

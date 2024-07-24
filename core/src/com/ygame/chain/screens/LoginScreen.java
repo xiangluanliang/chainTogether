@@ -260,8 +260,12 @@ public class LoginScreen implements Screen {
                     @Override
                     public void input(String input) {
                         try {
-                            gameClient = new GameClient(GameUtil.getServerAddress(), 12345, userID);
-                            game.setScreen(new Level0(game, userID, gameClient));
+                            if (GameUtil.generateRoomNumber().equals(input)) {
+                                gameClient = new GameClient(GameUtil.getServerAddress(), 12345, userID);
+                                game.setScreen(new Level0(game, userID, gameClient, GameUtil.generateRoomNumber()));
+                            } else {
+                                JOptionPane.showMessageDialog(null, "未找到房间。");
+                            }
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }

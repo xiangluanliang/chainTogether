@@ -76,21 +76,13 @@ public class GameServer {
                 while ((object = in.readObject()) != null) {
                     if (object instanceof SharedClasses.PlayerState) {
                         SharedClasses.PlayerState state = (SharedClasses.PlayerState) object;
-//                        Map<String, SharedClasses.PlayerState> playerMap
-//                                = (HashMap<String, SharedClasses.PlayerState>) object;
                         playerMap.put(this.getName(), state);
 
-//                        for (Map.Entry<String, SharedClasses.PlayerState> player : playerMap.entrySet()) {
-//                            SharedClasses.playerMap.get(player.getKey()).update(player.getValue().getX(), player.getValue().getY());
-////                            SharedClasses.playerMap.get(player.getKey()).linearImpulse = player.getValue().linearImpulse;
-//                        }
-//
                         for (PlayerConnection conn : players.values()) {
                             if (conn != this) {
                                 conn.update(playerMap.get(this.getName()));
                             }
                         }
-//                        System.out.println("rec server");
                     }
                     if (object instanceof Boolean) {
                         SharedClasses.gameStart = (boolean) object;

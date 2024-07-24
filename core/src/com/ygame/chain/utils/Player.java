@@ -86,7 +86,7 @@ public class Player {
     }
 
     public void jump(Vector2 vec) {
-        if (roleBody.getLinearVelocity().y == 0) {
+        if (roleBody.getLinearVelocity().y < 0.1f) {
             isJump = false;
         }
         if (!isJump && roleBody.getLinearVelocity().y <= 3) {

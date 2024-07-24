@@ -33,8 +33,8 @@ public class SharedClasses {
 
         public PlayerState(String userID) {
             this.userID = userID;
-            x = 5.1f;
-            y = 5.1f;
+            x = 2f;
+            y = 5f;
             linearImpulse = new Vector2(0, 0);
             this.angle = 0;
         }
