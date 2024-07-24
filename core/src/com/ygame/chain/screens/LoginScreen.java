@@ -43,7 +43,6 @@ public class LoginScreen implements Screen {
         this.game = game;
 //        VisUI.load(Gdx.files.internal("uiresource/uiskin.json")); // 加载VisUI皮肤
 
-        VisUI.load(VisUI.SkinScale.X2);
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
 
@@ -240,12 +239,13 @@ public class LoginScreen implements Screen {
         createRoomTable.row();
         createRoomTable.add(exitButton).center().uniform().padBottom(50);
 
+
         createRoomButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 try {
-                    gameClient = new GameClient(GameUtil.getServerAddress(), 12345);
-                    game.setScreen(new Level0(userID, gameClient));
+                    gameClient = new GameClient(GameUtil.getServerAddress(), 12345, userID);
+                    game.setScreen(new Level0(game, userID, gameClient, GameUtil.generateRoomNumber()));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -255,12 +255,17 @@ public class LoginScreen implements Screen {
         enterRoomButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
+
                 showInputDialog("Enter RoomCode:", new InputListener() {
                     @Override
                     public void input(String input) {
                         try {
-                            gameClient = new GameClient(GameUtil.getServerAddress(), 12345);
-                            game.setScreen(new Level0(userID, gameClient));
+                            if (GameUtil.generateRoomNumber().equals(input)) {
+                                gameClient = new GameClient(GameUtil.getServerAddress(), 12345, userID);
+                                game.setScreen(new Level0(game, userID, gameClient, GameUtil.generateRoomNumber()));
+                            } else {
+                                JOptionPane.showMessageDialog(null, "未找到房间。");
+                            }
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }

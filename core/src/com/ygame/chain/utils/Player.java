@@ -31,10 +31,12 @@ public class Player {
 
     private Sprite sprite;
     private boolean isJump;
+    public String roleID;
 
 
-    public Player(String path, World world, float bornPositionX, float bornPositionY) {
-        img = new Texture(path);
+    public Player(String roleID, World world, float bornPositionX, float bornPositionY) {
+        this.roleID = roleID;
+        img = new Texture("./ball/small" + roleID + "Ball.png");
         Width = img.getWidth();
         Height = img.getHeight();
         role = new TextureRegion(img, Width, Height);
@@ -52,7 +54,7 @@ public class Player {
         fixtureDef.density = 1.0f;// 密度
         fixtureDef.restitution = 0.3f; // 弹性
         fixtureDef.friction = 0.2f; // 摩擦
-        roleBody.createFixture(fixtureDef).setUserData(this); //教程说从物体获取数据对象，不太懂，-mark->一下先
+        roleBody.createFixture(fixtureDef).setUserData(this); //用于之后设置夹具
 
         dynamicBox.dispose();
     }
@@ -84,7 +86,7 @@ public class Player {
     }
 
     public void jump(Vector2 vec) {
-        if (roleBody.getLinearVelocity().y == 0) {
+        if (roleBody.getLinearVelocity().y < 0.1f) {
             isJump = false;
         }
         if (!isJump && roleBody.getLinearVelocity().y <= 3) {
@@ -105,8 +107,8 @@ public class Player {
         sprite.draw(batch);
     }
 
-    public void movePlayerTo(float x, float y) {
-        roleBody.setTransform(x, y, roleBody.getAngle());
+    public void movePlayerTo(float x, float y, float angle) {
+        roleBody.setTransform(x, y, angle);
     }
 
     public float getPosX() {
